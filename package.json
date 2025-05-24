@@ -2,7 +2,7 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tuanphan6511.github.io/wedding-landing/",
+  "homepage": "https://tuanphan6511.github.io/wedding/",
   "scripts": {
   "dev": "next dev",
   "build": "next build",

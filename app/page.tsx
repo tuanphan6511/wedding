@@ -181,7 +181,7 @@ export default function WeddingLanding() {
             }}
           >
             <Image
-              src="/wedding-landing/placeholder.svg?height=1080&width=1920"
+              src="/wedding/placeholder.svg?height=1080&width=1920"
               alt="Wedding background"
               fill
               className="object-cover object-center"
@@ -246,7 +246,7 @@ export default function WeddingLanding() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="relative aspect-[3/4] overflow-hidden mb-8">
-                  <Image src="/wedding-landing/placeholder.svg?height=600&width=450" alt="Bride" fill className="object-cover" />
+                  <Image src="/wedding/placeholder.svg?height=600&width=450" alt="Bride" fill className="object-cover" />
                 </div>
                 <h3 className="font-serif text-2xl mb-2">Sarah Johnson</h3>
                 <p className="text-gray-500 text-sm uppercase tracking-wider mb-4">The Bride</p>
@@ -257,7 +257,7 @@ export default function WeddingLanding() {
               </div>
               <div>
                 <div className="relative aspect-[3/4] overflow-hidden mb-8">
-                  <Image src="/wedding-landing/placeholder.svg?height=600&width=450" alt="Groom" fill className="object-cover" />
+                  <Image src="/wedding/placeholder.svg?height=600&width=450" alt="Groom" fill className="object-cover" />
                 </div>
                 <h3 className="font-serif text-2xl mb-2">Michael Thompson</h3>
                 <p className="text-gray-500 text-sm uppercase tracking-wider mb-4">The Groom</p>
@@ -356,7 +356,7 @@ export default function WeddingLanding() {
                 </motion.div>
               </motion.div>
               <div className="relative h-full min-h-[400px] overflow-hidden">
-                <Image src="/wedding-landing/placeholder.svg?height=800&width=600" alt="Venue" fill className="object-cover" />
+                <Image src="/wedding/placeholder.svg?height=800&width=600" alt="Venue" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
             </div>
@@ -513,7 +513,7 @@ export default function WeddingLanding() {
                   className="relative aspect-square overflow-hidden group cursor-pointer"
                 >
                   <Image
-                    src={`/wedding-landing/placeholder.svg?height=500&width=500&text=${i + 1}`}
+                    src={`/wedding/placeholder.svg?height=500&width=500&text=${i + 1}`}
                     alt={`Gallery image ${i + 1}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
