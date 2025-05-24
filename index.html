@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngọc Loan & Ngọc Tuấn - Wedding</title>
-    <meta name="description" content="Join us for our special day - Ngọc Loan & Ngọc Tuấn's Wedding on June 15, 2024">
+    <title>NLoan & NTuấn - Wedding</title>
+    <meta name="description" content="Join us for our wedding celebration on June 15, 2024">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,672 +12,461 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f8faf7',
+                            100: '#eef4ea',
+                            200: '#dce9d5',
+                            300: '#c1d6b4',
+                            400: '#9ebb8a',
+                            500: '#7da067',
+                            600: '#658350',
+                            700: '#526742',
+                            800: '#435337',
+                            900: '#39462f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
-        /* Custom Tailwind Config */
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-        
-        :root {
-            --primary-rose: #f43f5e;
-            --primary-pink: #ec4899;
-            --light-rose: #fdf2f8;
-            --dark-gray: #1f2937;
+        .gradient-text {
+            background: linear-gradient(135deg, #7da067 0%, #526742 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        body {
-            font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+        .minimal-shadow {
+            box-shadow: 0 4px 6px -1px rgba(125, 160, 103, 0.1), 0 2px 4px -1px rgba(125, 160, 103, 0.06);
         }
         
-        . {
-            font-family: 'Noto Serif', 'Noto Sans', Arial, Helvetica, serif;
+        .hover-lift {
+            transition: all 0.3s ease;
         }
         
-        /* Custom animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(125, 160, 103, 0.25);
         }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
         
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .line-divider {
+            position: relative;
         }
         
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .animate-heartbeat {
-            animation: heartbeat 2s ease-in-out infinite;
-        }
-        
-        /* Gradient backgrounds */
-        .bg-gradient-rose {
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
-        }
-        
-        .bg-gradient-pink {
-            background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #d946ef 100%);
-        }
-        
-        /* Glass morphism effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-        
-        /* Parallax effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-rose);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-pink);
-        }
-        
-        /* Mobile menu animation */
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        /* Countdown timer styling */
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(244, 63, 94, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(244, 63, 94, 0.2);
-        }
-        
-        /* Gallery hover effects */
-        .gallery-item {
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* Form styling */
-        .form-input {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .form-input:focus {
-            border-color: var(--primary-rose);
-            box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.1);
-        }
-        
-        /* Button hover effects */
-        .btn-primary {
-            background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.4);
-        }
-        
-        /* Floating hearts */
-        .floating-heart {
+        .line-divider::after {
+            content: '';
             position: absolute;
-            color: rgba(244, 63, 94, 0.3);
-            animation: floatUp 8s linear infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes floatUp {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(0deg);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-        
-        /* Loading animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #7da067, transparent);
         }
     </style>
 </head>
-<body class="bg-white overflow-x-hidden">
+<body class="font-sans bg-white text-gray-800">
+    
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex items-center space-x-2 text-white">
-                    <i class="fas fa-heart text-rose-500 text-xl animate-heartbeat"></i>
-                    <span class="text-xl  font-semibold">Ngọc Loan & Ngọc Tuấn</span>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                        <span class="text-sage-600 text-sm">L&T</span>
+                    </div>
+                    <span class="text-lg text-gray-800">NLoan & NTuấn</span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-white hover:text-rose-300 transition-colors font-medium">Home</a>
-                    <a href="#story" class="nav-link text-white hover:text-rose-300 transition-colors font-medium">Our Story</a>
-                    <a href="#details" class="nav-link text-white hover:text-rose-300 transition-colors font-medium">Details</a>
-                    <a href="#gallery" class="nav-link text-white hover:text-rose-300 transition-colors font-medium">Gallery</a>
-                    <a href="#rsvp" class="nav-link text-white hover:text-rose-300 transition-colors font-medium">RSVP</a>
+                    <a href="#home" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Home</a>
+                    <a href="#story" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Our Story</a>
+                    <a href="#details" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Details</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Gallery</a>
+                    <a href="#rsvp" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">RSVP</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-white text-xl" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-gradient-pink z-40 md:hidden" id="mobile-menu">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <button class="absolute top-6 right-6 text-white text-2xl" id="close-menu-btn">
-                    <i class="fas fa-times"></i>
-                </button>
-                <a href="#home" class="mobile-nav-link text-white text-2xl  hover:text-rose-200 transition-colors">Home</a>
-                <a href="#story" class="mobile-nav-link text-white text-2xl  hover:text-rose-200 transition-colors">Our Story</a>
-                <a href="#details" class="mobile-nav-link text-white text-2xl  hover:text-rose-200 transition-colors">Details</a>
-                <a href="#gallery" class="mobile-nav-link text-white text-2xl  hover:text-rose-200 transition-colors">Gallery</a>
-                <a href="#rsvp" class="mobile-nav-link text-white text-2xl  hover:text-rose-200 transition-colors">RSVP</a>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Home</a>
+                    <a href="#story" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Our Story</a>
+                    <a href="#details" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Details</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Gallery</a>
+                    <a href="#rsvp" class="text-gray-600 hover:text-sage-600 transition-colors py-2">RSVP</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen relative overflow-hidden bg-gradient-rose flex items-center justify-center">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-32 h-32 bg-rose-300 rounded-full animate-float"></div>
-            <div class="absolute top-40 right-20 w-24 h-24 bg-pink-300 rounded-full animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-rose-400 rounded-full animate-float" style="animation-delay: 4s;"></div>
-            <div class="absolute bottom-20 right-1/3 w-28 h-28 bg-pink-400 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="/wwwroot/banner/TAY_0751.JPG" 
+                 alt="Wedding Background" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-white/60"></div>
         </div>
         
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <!-- Hero Image -->
-            <div class="mb-8" data-aos="fade-up">
-                <div class="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white">
-                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=400&h=400&fit=crop&crop=faces" 
-                         alt="Wedding Rings" class="w-full h-full object-cover">
-                </div>
+        <!-- Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl gradient-text mb-4 font-light">
+                    NLoan & NTuấn
+                </h1>
             </div>
             
-            <!-- Main Title -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl  text-gray-800 mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
-                Ngọc Loan <span class="text-rose-500">&</span> Ngọc Tuấn
-            </h1>
-            
-            <!-- Subtitle -->
-            <p class="text-2xl md:text-3xl text-gray-600 mb-8 font-light" data-aos="fade-up" data-aos-delay="400">
-                are getting married
-            </p>
-            
-            <!-- Wedding Info -->
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-lg text-gray-700 mb-12" data-aos="fade-up" data-aos-delay="600">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-calendar-alt text-rose-500"></i>
-                    <span class="font-medium">June 15, 2024</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-map-marker-alt text-rose-500"></i>
-                    <span class="font-medium">Garden Valley Resort</span>
-                </div>
+            <div class="fade-in fade-in-delay-1">
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 font-light tracking-wide">
+                    June 15, 2024
+                </p>
             </div>
             
-            <!-- Countdown Timer -->
-            <div class="mb-12" data-aos="fade-up" data-aos-delay="800">
-                <h3 class="text-2xl md:text-3xl  text-gray-700 mb-8">Counting Down to Our Big Day</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto" id="countdown">
-                    <div class="countdown-item rounded-xl p-6 text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-rose-600 " id="days">00</div>
-                        <div class="text-sm text-gray-600 font-medium uppercase tracking-wide">Days</div>
-                    </div>
-                    <div class="countdown-item rounded-xl p-6 text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-rose-600 " id="hours">00</div>
-                        <div class="text-sm text-gray-600 font-medium uppercase tracking-wide">Hours</div>
-                    </div>
-                    <div class="countdown-item rounded-xl p-6 text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-rose-600 " id="minutes">00</div>
-                        <div class="text-sm text-gray-600 font-medium uppercase tracking-wide">Minutes</div>
-                    </div>
-                    <div class="countdown-item rounded-xl p-6 text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-rose-600 " id="seconds">00</div>
-                        <div class="text-sm text-gray-600 font-medium uppercase tracking-wide">Seconds</div>
-                    </div>
-                </div>
-                <div id="wedding-day-message" class="hidden mt-6 text-2xl  text-rose-600">
-                    🎉 The Big Day is Here! 🎉
-                </div>
+            <div class="fade-in fade-in-delay-2">
+                <p class="text-lg text-gray-500 mb-12 font-light">
+                    Tuscany Hills Vineyard • California
+                </p>
             </div>
             
-            <!-- CTA Button -->
-            <div data-aos="fade-up" data-aos-delay="1000">
-                <a href="#rsvp" class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-white text-lg font-semibold shadow-lg">
-                    <i class="fas fa-heart mr-2"></i>
+            <!-- Countdown -->
+            <div class="fade-in fade-in-delay-3">
+                <div id="countdown" class="flex justify-center space-x-6 md:space-x-8 mb-12">
+                    <div class="text-center">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
+                            <div id="days" class="text-2xl md:text-3xl gradient-text font-medium">00</div>
+                            <div class="text-sm text-gray-600 uppercase tracking-widest">Days</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
+                            <div id="hours" class="text-2xl md:text-3xl gradient-text font-medium">00</div>
+                            <div class="text-sm text-gray-600 uppercase tracking-widest">Hours</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
+                            <div id="minutes" class="text-2xl md:text-3xl gradient-text font-medium">00</div>
+                            <div class="text-sm text-gray-600 uppercase tracking-widest">Minutes</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
+                            <div id="seconds" class="text-2xl md:text-3xl gradient-text font-medium">00</div>
+                            <div class="text-sm text-gray-600 uppercase tracking-widest">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="scrollToSection('rsvp')" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                     RSVP Now
-                </a>
+                </button>
             </div>
         </div>
         
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-gray-400 text-2xl"></i>
+            <i data-lucide="chevron-down" class="w-6 h-6 text-sage-600"></i>
         </div>
     </section>
 
     <!-- Our Story Section -->
-    <section id="story" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl  text-gray-800 mb-4">Our Love Story</h2>
-                <div class="w-24 h-1 bg-rose-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Every love story is beautiful, but ours is our favorite
-                </p>
+    <section id="story" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">Our Story</h2>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Story Image -->
-                <div class="relative" data-aos="fade-right">
-                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=400&fit=crop" 
-                             alt="Couple Photo" class="w-full h-96 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl gradient-text mb-4">How We Met</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            On a rainy afternoon in a small bookstore café, NLoan was lost in her favorite novel when NTuấn accidentally knocked over her coffee. What started as an embarrassing moment turned into hours of conversation about literature, dreams, and the magic of serendipity.
+                        </p>
                     </div>
-                    <!-- Decorative Elements -->
-                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-rose-100 rounded-full opacity-50"></div>
-                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-pink-100 rounded-full opacity-50"></div>
+                    
+                    <div>
+                        <h3 class="text-2xl gradient-text mb-4">The Proposal</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Two years later, NTuấn returned to that same café. As NLoan opened what she thought was a new book, she found pages filled with their memories and a simple question: "Will you write the rest of our story together?" The ring was hidden in the bookmark.
+                        </p>
+                    </div>
                 </div>
                 
-                <!-- Story Content -->
-                <div class="space-y-8" data-aos="fade-left">
-                    <div class="space-y-4">
-                        <h3 class="text-2xl md:text-3xl  text-gray-800 flex items-center">
-                            <i class="fas fa-coffee text-rose-500 mr-3"></i>
-                            How We Met
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            We first crossed paths at a cozy coffee shop in downtown Seattle on a rainy Tuesday morning. 
-                            Ngọc Loan was reading her favorite book, and Ngọc Tuấn couldn't help but notice the beautiful smile 
-                            that lit up her face with every page. What started as a conversation about literature turned 
-                            into hours of talking about dreams, travel, and life.
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <h3 class="text-2xl md:text-3xl  text-gray-800 flex items-center">
-                            <i class="fas fa-ring text-rose-500 mr-3"></i>
-                            The Proposal
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            On a breathtaking sunset hike at Mount Rainier, Ngọc Tuấn got down on one knee at the very spot 
-                            where we had our first anniversary picnic. With the golden light painting the mountains and 
-                            Ngọc Loan's favorite song playing softly in the background, he asked her to be his forever 
-                            adventure partner.
-                        </p>
-                    </div>
-                    
-                    <div class="pt-4">
-                        <button class="inline-flex items-center px-6 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
-                            <i class="fas fa-book-open mr-2"></i>
-                            Read Our Full Story
-                        </button>
-                    </div>
+                <div class="relative">
+                    <img src="/wwwroot/banner/TAY_0831.JPG" 
+                         alt="Couple Photo" 
+                         class="rounded-lg shadow-lg w-full">
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"></div>
+                    <div class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Wedding Details Section -->
-    <section id="details" class="py-20 bg-gradient-rose">
-        <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl  text-gray-800 mb-4">Wedding Details</h2>
-                <div class="w-24 h-1 bg-rose-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    All the important information for our special day
-                </p>
+    <section id="details" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">Wedding Details</h2>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- Ceremony Card -->
-                <div class="glass rounded-2xl p-8 text-center shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-rose-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-church text-rose-600 text-2xl"></i>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Ceremony -->
+                <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
+                    <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-sage-600"></i>
                     </div>
-                    <h3 class="text-2xl md:text-3xl  text-gray-800 mb-6">Ceremony</h3>
-                    <div class="space-y-4 text-gray-700">
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-calendar text-rose-500"></i>
-                            <span class="text-lg">Saturday, June 15, 2024</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-clock text-rose-500"></i>
-                            <span class="text-lg">4:00 PM</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-map-marker-alt text-rose-500"></i>
-                            <span class="text-lg">Garden Valley Resort</span>
-                        </div>
-                        <div class="mt-6 p-4 bg-white/50 rounded-lg">
-                            <p class="text-sm">
-                                123 Garden Valley Road<br>
-                                Bellevue, WA 98004
-                            </p>
-                        </div>
+                    <h3 class="text-2xl gradient-text mb-4">Ceremony</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            Saturday, June 15, 2024
+                        </p>
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                            4:00 PM
+                        </p>
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            Tuscany Hills Vineyard
+                        </p>
+                        <p class="text-sm text-gray-500 mt-4">
+                            1234 Vineyard Lane<br>
+                            Napa Valley, CA 94558
+                        </p>
                     </div>
                 </div>
                 
-                <!-- Reception Card -->
-                <div class="glass rounded-2xl p-8 text-center shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-rose-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-glass-cheers text-rose-600 text-2xl"></i>
+                <!-- Reception -->
+                <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
+                    <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-sage-600"></i>
                     </div>
-                    <h3 class="text-2xl md:text-3xl  text-gray-800 mb-6">Reception</h3>
-                    <div class="space-y-4 text-gray-700">
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-calendar text-rose-500"></i>
-                            <span class="text-lg">Saturday, June 15, 2024</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-clock text-rose-500"></i>
-                            <span class="text-lg">6:00 PM - 11:00 PM</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-3">
-                            <i class="fas fa-utensils text-rose-500"></i>
-                            <span class="text-lg">Garden Valley Ballroom</span>
-                        </div>
-                        <div class="mt-6 p-4 bg-white/50 rounded-lg">
-                            <p class="text-sm">
-                                Dinner, Dancing & Celebration<br>
-                                Cocktail Hour at 6:00 PM
-                            </p>
-                        </div>
+                    <h3 class="text-2xl gradient-text mb-4">Reception</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            Saturday, June 15, 2024
+                        </p>
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                            6:00 PM - 11:00 PM
+                        </p>
+                        <p class="flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                            The Grand Ballroom
+                        </p>
+                        <p class="text-sm text-gray-500 mt-4">
+                            Dinner, Dancing & Celebration<br>
+                            Cocktail Hour: 6:00 PM
+                        </p>
                     </div>
                 </div>
             </div>
             
             <!-- Additional Info -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Dress Code -->
-                <div class="glass rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="600">
-                    <i class="fas fa-tshirt text-rose-500 text-2xl mb-4"></i>
-                    <h4 class="text-xl  text-gray-800 mb-3">Dress Code</h4>
-                    <p class="text-gray-600 text-sm">
-                        Cocktail attire requested. Elegant and comfortable for outdoor ceremony.
-                    </p>
-                </div>
-                
-                <!-- Parking -->
-                <div class="glass rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="700">
-                    <i class="fas fa-parking text-rose-500 text-2xl mb-4"></i>
-                    <h4 class="text-xl  text-gray-800 mb-3">Parking</h4>
-                    <p class="text-gray-600 text-sm">
-                        Complimentary valet parking available. Additional parking in adjacent lot.
-                    </p>
-                </div>
-                
-                <!-- Accommodations -->
-                <div class="glass rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="800">
-                    <i class="fas fa-bed text-rose-500 text-2xl mb-4"></i>
-                    <h4 class="text-xl  text-gray-800 mb-3">Accommodations</h4>
-                    <p class="text-gray-600 text-sm">
-                        Special rates available at Garden Valley Resort. Book by May 1st.
-                    </p>
-                </div>
+            <div class="mt-12 max-w-2xl mx-auto text-center bg-sage-50 rounded-lg p-8">
+                <h3 class="text-xl gradient-text mb-4">Dress Code</h3>
+                <p class="text-gray-600 mb-4">
+                    Cocktail attire requested. We'll be celebrating in a garden setting, so comfortable shoes are recommended.
+                </p>
+                <p class="text-sm text-gray-500">
+                    The ceremony will be outdoors with an indoor reception to follow.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl  text-gray-800 mb-4">Our Memories</h2>
-                <div class="w-24 h-1 bg-rose-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    A glimpse into our journey together
-                </p>
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">Our Journey</h2>
             </div>
             
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 1" class="w-full h-48 object-cover">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 1" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 2" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 2" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 3" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 3" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 4" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 4" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 5" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 5" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 6" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 6" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 7" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 7" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="800">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=300&h=300&fit=crop" 
-                         alt="Gallery Photo 8" class="w-full h-48 object-cover">
+                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Gallery Photo 8" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 </div>
-            </div>
-            
-            <!-- View More Button -->
-            <div class="text-center" data-aos="fade-up">
-                <button class="inline-flex items-center px-6 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
-                    <i class="fas fa-camera mr-2"></i>
-                    View All Photos
-                </button>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
-    <section id="rsvp" class="py-20 bg-gradient-pink text-white">
-        <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl  mb-4">RSVP</h2>
-                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
-                <p class="text-xl opacity-90 max-w-2xl mx-auto">
-                    We can't wait to celebrate with you! Please let us know if you'll be joining us for our special day.
+    <section id="rsvp" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">Join Our Celebration</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Your presence would make our day even more special. Please let us know if you can join us.
                 </p>
             </div>
             
-            <!-- RSVP Form -->
-            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <div class="glass rounded-2xl p-8 shadow-2xl">
-                    <form id="rsvp-form" class="space-y-6">
-                        <!-- Name Fields -->
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                                <input type="text" name="firstName" required 
-                                       class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500"
-                                       placeholder="Your first name">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                                <input type="text" name="lastName" required 
-                                       class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500"
-                                       placeholder="Your last name">
-                            </div>
-                        </div>
-                        
-                        <!-- Email -->
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-lg p-8">
+                <form id="rsvp-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                            <input type="email" name="email" required 
-                                   class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500"
-                                   placeholder="your.email@example.com">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors" 
+                                   placeholder="Your first name" 
+                                   required>
                         </div>
-                        
-                        <!-- Attendance -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">Will you be attending? *</label>
-                            <div class="flex space-x-6">
-                                <label class="flex items-center">
-                                    <input type="radio" name="attending" value="yes" required class="mr-3 text-rose-500">
-                                    <span class="text-gray-700 text-lg">Yes, I'll be there! 🎉</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="attending" value="no" required class="mr-3 text-rose-500">
-                                    <span class="text-gray-700 text-lg">Sorry, can't make it 😢</span>
-                                </label>
-                            </div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors" 
+                                   placeholder="Your last name" 
+                                   required>
                         </div>
-                        
-                        <!-- Guest Count -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
-                            <select name="guestCount" class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800">
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4 Guests</option>
-                                <option value="5">5+ Guests</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Dietary Restrictions -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Dietary Restrictions or Special Requests</label>
-                            <textarea name="specialRequests" rows="4" 
-                                      class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500"
-                                      placeholder="Please let us know about any dietary restrictions, allergies, or special requests..."></textarea>
-                        </div>
-                        
-                        <!-- Song Request -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Song Request</label>
-                            <input type="text" name="songRequest" 
-                                   class="form-input w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500"
-                                   placeholder="Any song you'd like to hear at the reception?">
-                        </div>
-                        
-                        <!-- Submit Button -->
-                        <div class="pt-4">
-                            <button type="submit" 
-                                    class="w-full btn-primary py-4 rounded-lg text-white text-lg font-semibold flex items-center justify-center">
-                                <i class="fas fa-heart mr-2"></i>
-                                <span id="submit-text">Send RSVP</span>
-                                <div id="submit-loading" class="loading hidden ml-2"></div>
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                     
-                    <!-- Contact Info -->
-                    <div class="mt-8 pt-8 border-t border-white/20 text-center">
-                        <p class="text-gray-700 mb-4">Questions? Get in touch!</p>
-                        <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-6">
-                            <a href="mailto:Ngọc Loan.Ngọc Tuấn.wedding@email.com" 
-                               class="flex items-center justify-center text-rose-600 hover:text-rose-700 transition-colors">
-                                <i class="fas fa-envelope mr-2"></i>
-                                Ngọc Loan.Ngọc Tuấn.wedding@email.com
-                            </a>
-                            <a href="tel:+1234567890" 
-                               class="flex items-center justify-center text-rose-600 hover:text-rose-700 transition-colors">
-                                <i class="fas fa-phone mr-2"></i>
-                                (123) 456-7890
-                            </a>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" 
+                               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors" 
+                               placeholder="your.email@example.com" 
+                               required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-4">Will you be attending?</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="radio" name="attending" value="yes" class="text-sage-600 focus:ring-sage-500" required>
+                                <span class="ml-3 text-gray-700">Yes, I'll be there! 🎉</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="attending" value="no" class="text-sage-600 focus:ring-sage-500" required>
+                                <span class="ml-3 text-gray-700">Sorry, can't make it 😢</span>
+                            </label>
                         </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
+                        <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Dietary Restrictions</label>
+                        <textarea class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors" 
+                                  rows="4" 
+                                  placeholder="Please let us know about any dietary restrictions or allergies..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Message</label>
+                        <textarea class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors" 
+                                  rows="3" 
+                                  placeholder="Any special message for the happy couple..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-sage-600 hover:bg-sage-700 text-white py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Send RSVP
+                    </button>
+                </form>
+                
+                <!-- Contact Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                    <p class="text-gray-600 mb-4">Questions? We'd love to hear from you!</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-6">
+                        <a href="mailto:NLoan.NTuấn.wedding@email.com" 
+                           class="flex items-center justify-center text-sage-600 hover:text-sage-700 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            NLoan.NTuấn.wedding@email.com
+                        </a>
+                        <a href="tel:+1234567890" 
+                           class="flex items-center justify-center text-sage-600 hover:text-sage-700 transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            (123) 456-7890
+                        </a>
                     </div>
                 </div>
             </div>
@@ -686,264 +475,143 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center" data-aos="fade-up">
-                <!-- Logo -->
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <i class="fas fa-heart text-rose-500 text-xl animate-heartbeat"></i>
-                    <span class="text-2xl ">Ngọc Loan & Ngọc Tuấn</span>
-                    <i class="fas fa-heart text-rose-500 text-xl animate-heartbeat"></i>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-6">
+                <div class="w-8 h-8 rounded-full bg-sage-600 flex items-center justify-center">
+                    <span class="text-sm">L&T</span>
                 </div>
-                
-                <!-- Tagline -->
-                <p class="text-gray-400 mb-8 text-lg">Thank you for being part of our love story</p>
-                
-                <!-- Social Links -->
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
-                        <i class="fas fa-globe"></i>
-                    </a>
-                </div>
-                
-                <!-- Copyright -->
-                <div class="border-t border-gray-700 pt-6">
-                    <p class="text-gray-500 text-sm">© 2024 Ngọc Loan & Ngọc Tuấn Wedding. Made with ❤️</p>
-                </div>
+                <span class="text-xl">NLoan & NTuấn</span>
+            </div>
+            
+            <p class="text-gray-400 mb-6">Thank you for being part of our love story</p>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6">
+                <p class="text-gray-500 text-sm">© 2024 NLoan & NTuấn Wedding. Made with ❤️</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-rose-500 text-white p-3 rounded-full shadow-lg hover:bg-rose-600 transition-all duration-300 opacity-0 invisible">
-        <i class="fas fa-chevron-up"></i>
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
-    <!-- Success Modal -->
-    <div id="success-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
-        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
-            <div class="text-green-500 text-5xl mb-4">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 class="text-2xl  text-gray-800 mb-2">Thank You!</h3>
-            <p class="text-gray-600 mb-6">Your RSVP has been received. We can't wait to celebrate with you!</p>
-            <button onclick="closeModal()" class="btn-primary px-6 py-2 rounded-lg text-white">
-                Close
-            </button>
-        </div>
-    </div>
-
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <!-- JavaScript -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
-                navbar.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('text-white');
-                    link.classList.add('text-gray-800');
-                });
-                navbar.querySelector('.text-white').classList.remove('text-white');
-                navbar.querySelector('span').classList.add('text-gray-800');
-            } else {
-                navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
-                navbar.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.add('text-white');
-                    link.classList.remove('text-gray-800');
-                });
-                navbar.querySelector('.text-gray-800').classList.add('text-white');
-                navbar.querySelector('span').classList.remove('text-gray-800');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Countdown Timer
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Wedding date countdown
+        const weddingDate = new Date('2024-06-15T16:00:00').getTime();
+        
         function updateCountdown() {
-            const weddingDate = new Date('2024-06-15T16:00:00').getTime();
             const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+            const timeLeft = weddingDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
                 document.getElementById('days').textContent = days.toString().padStart(2, '0');
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
             } else {
-                document.getElementById('countdown').style.display = 'none';
-                document.getElementById('wedding-day-message').classList.remove('hidden');
+                document.getElementById('countdown').innerHTML = '<div class="text-2xl gradient-text">The Big Day is Here! 🎉</div>';
             }
         }
-
+        
         // Update countdown every second
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
         // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // Add click listeners to navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
             });
         });
-
+        
         // Back to top button
         const backToTopBtn = document.getElementById('back-to-top');
         
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+                backToTopBtn.classList.add('translate-y-0', 'opacity-100');
             } else {
-                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+                backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
             }
         });
-
+        
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-
-        // RSVP Form handling
-        const rsvpForm = document.getElementById('rsvp-form');
-        const submitText = document.getElementById('submit-text');
-        const submitLoading = document.getElementById('submit-loading');
-        const successModal = document.getElementById('success-modal');
-
-        rsvpForm.addEventListener('submit', function(e) {
+        
+        // RSVP Form submission
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show loading state
-            submitText.textContent = 'Sending...';
-            submitLoading.classList.remove('hidden');
+            // Show success message
+            alert('Thank you for your RSVP! We\'ll be in touch soon.');
             
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                // Reset form
-                rsvpForm.reset();
-                
-                // Reset button state
-                submitText.textContent = 'Send RSVP';
-                submitLoading.classList.add('hidden');
-                
-                // Show success modal
-                showModal();
-            }, 2000);
+            // Here you would typically send the form data to your server
+            // For demo purposes, we'll just reset the form
+            this.reset();
         });
-
-        function showModal() {
-            successModal.classList.remove('opacity-0', 'invisible');
-        }
-
-        function closeModal() {
-            successModal.classList.add('opacity-0', 'invisible');
-        }
-
-        // Floating hearts animation
-        function createFloatingHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '<i class="fas fa-heart"></i>';
-            heart.className = 'floating-heart';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
-            
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
-        }
-
-        // Create floating hearts periodically
-        setInterval(createFloatingHeart, 3000);
-
-        // Gallery lightbox effect (simple version)
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.addEventListener('click', function() {
-                // Simple zoom effect - you can replace this with a proper lightbox
-                this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
-                this.style.zIndex = this.style.zIndex === '1000' ? '1' : '1000';
-                this.style.position = this.style.position === 'fixed' ? 'relative' : 'fixed';
-                this.style.top = this.style.top === '50%' ? 'auto' : '50%';
-                this.style.left = this.style.left === '50%' ? 'auto' : '50%';
-                this.style.transform = this.style.transform.includes('translate') ? 'scale(1)' : 'scale(1.5) translate(-50%, -50%)';
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        });
-
-        // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effects to cards
-            const cards = document.querySelectorAll('.glass, .countdown-item');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.getElementById('home');
-            const rate = scrolled * -0.5;
-            
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
+        }, observerOptions);
+        
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
