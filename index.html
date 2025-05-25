@@ -946,11 +946,21 @@
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
     <script>
-      window.addEventListener("DOMContentLoaded", function () {
+     window.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("bg-music");
     const musicIcon = document.getElementById("music-icon");
-    // Tùy chọn này có thể cần thiết để trình duyệt cho phép tự động phát
     audio.volume = 0.5;
+
+    // Tự động phát nhạc khi trang tải xong (nếu trình duyệt cho phép)
+    audio.play().then(() => {
+      musicIcon.classList.remove("music-paused");
+      musicIcon.classList.add("music-playing");
+    }).catch(() => {
+      // Nếu bị chặn, icon sẽ ở trạng thái pause
+      musicIcon.classList.remove("music-playing");
+      musicIcon.classList.add("music-paused");
+    });
+
     // Đặt trạng thái ban đầu cho icon
     setTimeout(() => {
       if (audio.paused) {
@@ -961,12 +971,6 @@
         musicIcon.classList.add("music-playing");
       }
     }, 500);
-
-    audio.play().catch(function (err) {
-      // Nếu autoplay bị chặn, icon sẽ ở trạng thái pause
-      musicIcon.classList.remove("music-playing");
-      musicIcon.classList.add("music-paused");
-    });
   });
 
   const audio = document.getElementById('bg-music');
