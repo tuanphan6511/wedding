@@ -919,13 +919,14 @@
       <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
     <button
-      class="fixed z-10 bottom-8 right-[5rem] bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg"
+      class="absolute z-10 top-[5rem] right-2 text-white p-3 rounded-full shadow-lg"
       onclick="toggleMusic()"
+      id="music-button"
     >
       <i data-lucide="music-2" class="w-5 h-5"></i>
     </button>
 
-    <audio id="bg-music" autoplay loop >
+    <audio id="bg-music" autoplay loop>
       <source src="./wwwroot/audio/911-lyrics--vietsub.mp3" type="audio/mpeg" />
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
@@ -935,22 +936,40 @@
 
       window.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("bg-music");
-        // Tùy chọn này có thể cần thiết để trình duyệt cho phép tự động phát
-        audio.volume = 0.5; // chỉnh âm lượng nếu cần
+        audio.volume = 0.5;
+
+        // Thử tự động phát nhạc
         audio.play().catch(function (err) {
+          // Nếu bị chặn (thường là Safari/iOS), sẽ phát khi người dùng tương tác
           console.warn(
             "Autoplay bị chặn bởi trình duyệt, sẽ phát khi người dùng tương tác"
           );
+
+          // Lắng nghe sự kiện tương tác đầu tiên để phát nhạc
+          const unlockAudio = () => {
+            audio.play().finally(() => {
+              // Sau khi phát thử, bỏ các listener để tránh gọi lại nhiều lần
+              document.removeEventListener("touchstart", unlockAudio);
+              document.removeEventListener("click", unlockAudio);
+            });
+          };
+          document.addEventListener("touchstart", unlockAudio, { once: true });
+          document.addEventListener("click", unlockAudio, { once: true });
         });
       });
       function toggleMusic() {
+        const musicButton = document.getElementById("music-button");
         if (audio.paused) {
           audio.play();
           audio.muted = false; // Bỏ tắt tiếng khi phát
+
+          musicButton.innerHTML = `<i data-lucide="pause" class="w-5 h-5"></i>`;
         } else {
           audio.pause();
           audio.muted = true; // Tắt tiếng khi dừng
+          musicButton.innerHTML = `<i data-lucide="music-2" class="w-5 h-5"></i>`;
         }
+        lucide.createIcons();
       }
     </script>
     <!-- JavaScript -->
