@@ -133,19 +133,21 @@
             >
               <span class="text-sage-600 text-sm">L&T</span>
             </div> -->
-            <span class="text-lg text-gray-800"
-              >Ngọc Loan <span class="text-[red]">&#10084;</span> Ngọc
-              Tuấn</span
+            <a href="#home">
+              <span class="text-lg text-gray-800"
+                >Ngọc Loan <span class="text-[red]">&#10084;</span> Ngọc
+                Tuấn</span
+              ></a
             >
           </div>
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-8">
-            <a
+            <!-- <a
               href="#home"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
               >L&T</a
-            >
+            > -->
             <a
               href="#story"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
@@ -177,11 +179,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden pb-4">
           <div class="flex flex-col space-y-3">
-            <a
+            <!-- <a
               href="#home"
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
               >Trang chủ</a
-            >
+            > -->
             <a
               href="#story"
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
@@ -916,12 +918,21 @@
     >
       <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
-    <audio id="bg-music" autoplay loop>
+    <button
+      class="fixed z-10 bottom-8 right-[5rem] bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg"
+      onclick="toggleMusic()"
+    >
+      <i data-lucide="music-2" class="w-5 h-5"></i>
+    </button>
+
+    <audio id="bg-music" autoplay loop >
       <source src="./wwwroot/audio/911-lyrics--vietsub.mp3" type="audio/mpeg" />
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
 
     <script>
+      const audio = document.getElementById("bg-music");
+
       window.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("bg-music");
         // Tùy chọn này có thể cần thiết để trình duyệt cho phép tự động phát
@@ -932,6 +943,15 @@
           );
         });
       });
+      function toggleMusic() {
+        if (audio.paused) {
+          audio.play();
+          audio.muted = false; // Bỏ tắt tiếng khi phát
+        } else {
+          audio.pause();
+          audio.muted = true; // Tắt tiếng khi dừng
+        }
+      }
     </script>
     <!-- JavaScript -->
     <script>
@@ -1026,38 +1046,38 @@
       });
 
       // RSVP Form submission
-      document
-        .getElementById("rsvp-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+      //   document
+      //     .getElementById("rsvp-form")
+      //     .addEventListener("submit", function (e) {
+      //       e.preventDefault();
 
-          // Show success message
-          alert("Thank you for your RSVP! We'll be in touch soon.");
+      //       // Show success message
+      //       alert("Thank you for your RSVP! We'll be in touch soon.");
 
-          // Here you would typically send the form data to your server
-          // For demo purposes, we'll just reset the form
-          this.reset();
-        });
+      //       // Here you would typically send the form data to your server
+      //       // For demo purposes, we'll just reset the form
+      //       this.reset();
+      //     });
 
       // Intersection Observer for fade-in animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
+      //   const observerOptions = {
+      //     threshold: 0.1,
+      //     rootMargin: "0px 0px -50px 0px",
+      //   };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-          }
-        });
-      }, observerOptions);
+      //   const observer = new IntersectionObserver((entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         entry.target.style.opacity = "1";
+      //         entry.target.style.transform = "translateY(0)";
+      //       }
+      //     });
+      //   }, observerOptions);
 
-      // Observe all sections for scroll animations
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
+      //   // Observe all sections for scroll animations
+      //   document.querySelectorAll("section").forEach((section) => {
+      //     observer.observe(section);
+      //   });
     </script>
   </body>
 </html>
