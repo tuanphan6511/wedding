@@ -1,333 +1,480 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ngọc Loan & Ngọc Tuấn - Wedding</title>
-    <meta name="description" content="Join us for our wedding celebration on June 15, 2024">
-    
+    <meta
+      name="description"
+      content="Join us for our wedding celebration on June 15, 2024"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
+
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'serif': ['Cormorant Garamond', 'serif'],
-                        'sans': ["Dancing Script", 'cursive'],
-                    },
-                    colors: {
-                        sage: {
-                            50: '#f8faf7',
-                            100: '#eef4ea',
-                            200: '#dce9d5',
-                            300: '#c1d6b4',
-                            400: '#9ebb8a',
-                            500: '#7da067',
-                            600: '#658350',
-                            700: '#526742',
-                            800: '#435337',
-                            900: '#39462f',
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Dancing Script", "cursive"],
+            },
+            colors: {
+              sage: {
+                50: "#f8faf7",
+                100: "#eef4ea",
+                200: "#dce9d5",
+                300: "#c1d6b4",
+                400: "#9ebb8a",
+                500: "#7da067",
+                600: "#658350",
+                700: "#526742",
+                800: "#435337",
+                900: "#39462f",
+              },
+            },
+          },
+        },
+      };
     </script>
-    
+
     <style>
-        .gradient-text {
-            background: rgb(255, 229, 186);/*linear-gradient(135deg, #7da067 0%, #526742 100%);*/
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+      .gradient-text {
+        background: rgb(
+          255,
+          229,
+          186
+        ); /*linear-gradient(135deg, #7da067 0%, #526742 100%);*/
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .minimal-shadow {
+        box-shadow: 0 4px 6px -1px rgba(125, 160, 103, 0.1),
+          0 2px 4px -1px rgba(125, 160, 103, 0.06);
+      }
+
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(125, 160, 103, 0.25);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .fade-in-delay-1 {
+        animation-delay: 0.2s;
+      }
+      .fade-in-delay-2 {
+        animation-delay: 0.4s;
+      }
+      .fade-in-delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        
-        .minimal-shadow {
-            box-shadow: 0 4px 6px -1px rgba(125, 160, 103, 0.1), 0 2px 4px -1px rgba(125, 160, 103, 0.06);
-        }
-        
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(125, 160, 103, 0.25);
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        .fade-in-delay-1 { animation-delay: 0.2s; }
-        .fade-in-delay-2 { animation-delay: 0.4s; }
-        .fade-in-delay-3 { animation-delay: 0.6s; }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .line-divider {
-            position: relative;
-        }
-        
-        .line-divider::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #7da067, transparent);
-        }
-        .md\:text-7xl, .md\:text-8xl{
-            line-height: 1.15!important;
-        }
+      }
+
+      .line-divider {
+        position: relative;
+      }
+
+      .line-divider::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #7da067, transparent);
+      }
+      .md\:text-7xl,
+      .md\:text-8xl {
+        line-height: 1.15 !important;
+      }
     </style>
-</head>
-<body class="font-sans bg-white text-gray-800 overflow-x-hidden">
-    
+  </head>
+  <body class="font-sans bg-white text-gray-800 overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
-                        <span class="text-sage-600 text-sm">L&T</span>
-                    </div>
-                    <span class="text-lg text-gray-800">Ngọc Loan <span class="text-[red]">&#10084;</span> Ngọc Tuấn</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Trang chủ</a>
-                    <a href="#story" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Lời Hứa</a>
-                    <a href="#details" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Thông Tin Lễ Cưới</a>
-                    <a href="#gallery" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">Album Cưới</a>
-                    <a href="#rsvp" class="text-gray-600 hover:text-sage-600 transition-colors font-medium">RSVP</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <i data-lucide="menu" class="w-5 h-5"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Trang chủ</a>
-                    <a href="#story" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Lời Hứa</a>
-                    <a href="#details" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Thông Tin Lễ Cưới</a>
-                    <a href="#gallery" class="text-gray-600 hover:text-sage-600 transition-colors py-2">Album Cưới</a>
-                    <a href="#rsvp" class="text-gray-600 hover:text-sage-600 transition-colors py-2">RSVP</a>
-                </div>
-            </div>
+    <nav
+      class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <!-- <div
+              class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center"
+            >
+              <span class="text-sage-600 text-sm">L&T</span>
+            </div> -->
+            <span class="text-lg text-gray-800"
+              >Ngọc Loan <span class="text-[red]">&#10084;</span> Ngọc
+              Tuấn</span
+            >
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >L&T</a
+            >
+            <a
+              href="#story"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >Lời Hứa</a
+            >
+            <a
+              href="#details"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >Thông Tin Lễ Cưới</a
+            >
+            <a
+              href="#gallery"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >Album Cưới</a
+            >
+            <a
+              href="#map"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >Chỉ Đường</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="#home"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Trang chủ</a
+            >
+            <a
+              href="#story"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Lời Hứa</a
+            >
+            <a
+              href="#details"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Thông Tin Lễ Cưới</a
+            >
+            <a
+              href="#gallery"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Album Cưới</a
+            >
+            <a
+              href="#map"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Chỉ Đường</a
+            >
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative">
-        <!-- Background Image -->
-        <div class="fixed inset-0 z-0">
-            <img src="./wwwroot/banner/TAY_0751.JPG" 
-                 alt="Wedding Background" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-[#5b575799]"></div>
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative"
+    >
+      <!-- Background Image -->
+      <div class="fixed inset-0 z-0">
+        <img
+          src="./wwwroot/banner/TAY_0751.JPG"
+          alt="Wedding Background"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#5b575799]"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+        <div class="fade-in">
+          <p
+            class="text-xl md:text-5xl text-gray-600 mb-8 font-light tracking-wide !text-white"
+          >
+            Wedding
+          </p>
         </div>
-        
-        <!-- Content -->
-        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
-            <div class="fade-in">
-                <p class="text-xl md:text-5xl text-gray-600 mb-8 font-light tracking-wide !text-white">
-                   Wedding
-                </p>
-            </div>
-            <div class="fade-in fade-in-delay-1">
-                <h1 class="text-5xl md:text-7xl lg:text-7xl gradient-text mb-4 font-light">
-                    Ngọc Loan 
-                </h1>
-                <p class="text-2xl !text-white">&</p>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl gradient-text mb-4 font-light">
-                     Ngọc Tuấn
-                </h1>
-            </div>
-            
-            <div class="fade-in fade-in-delay-1">
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 font-light tracking-wide !text-white">
-                    29, Tháng 6, 2025
-                </p>
-            </div>
-            
-            <!-- <div class="fade-in fade-in-delay-2">
+        <div class="fade-in fade-in-delay-1">
+          <h1
+            class="text-5xl md:text-7xl lg:text-7xl gradient-text mb-4 font-light"
+          >
+            Ngọc Loan
+          </h1>
+          <p class="text-2xl !text-white">&</p>
+          <h1
+            class="text-5xl md:text-7xl lg:text-8xl gradient-text mb-4 font-light"
+          >
+            Ngọc Tuấn
+          </h1>
+        </div>
+
+        <div class="fade-in fade-in-delay-1">
+          <p
+            class="text-xl md:text-2xl text-gray-600 mb-8 font-light tracking-wide !text-white"
+          >
+            29, Tháng 6, 2025
+          </p>
+        </div>
+
+        <!-- <div class="fade-in fade-in-delay-2">
                 <p class="text-lg text-gray-500 mb-12 font-light">
                     Tuscany Hills Vineyard • California
                 </p>
             </div> -->
-            
-            <!-- Countdown -->
-            <div class="fade-in fade-in-delay-3">
-                <div id="countdown" class="flex justify-center space-x-6 md:space-x-8 mb-12 !text-black">
-                    <div class="text-center">
-                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
-                            <div id="days" class="text-2xl md:text-3xl font-medium">00</div>
-                            <div class="text-sm text-gray-600 uppercase tracking-widest hidden md:block">Days</div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
-                            <div id="hours" class="text-2xl md:text-3xl font-medium">00</div>
-                            <div class="text-sm text-gray-600 uppercase tracking-widest hidden md:block">Hours</div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
-                            <div id="minutes" class="text-2xl md:text-3xl font-medium">00</div>
-                            <div class="text-sm text-gray-600 uppercase tracking-widest hidden md:block">Minutes</div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow">
-                            <div id="seconds" class="text-2xl md:text-3xl font-medium">00</div>
-                            <div class="text-sm text-gray-600 uppercase tracking-widest hidden md:block">Seconds</div>
-                        </div>
-                    </div>
+
+        <!-- Countdown -->
+        <div class="fade-in fade-in-delay-3">
+          <div
+            id="countdown"
+            class="flex justify-center space-x-6 md:space-x-8 mb-12 !text-black"
+          >
+            <div class="text-center">
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
+              >
+                <div id="days" class="text-2xl md:text-3xl font-medium">00</div>
+                <div
+                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
+                >
+                  Days
                 </div>
-                
-                <!-- <button onclick="scrollToSection('rsvp')" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              </div>
+            </div>
+            <div class="text-center">
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
+              >
+                <div id="hours" class="text-2xl md:text-3xl font-medium">
+                  00
+                </div>
+                <div
+                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
+                >
+                  Hours
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
+              >
+                <div id="minutes" class="text-2xl md:text-3xl font-medium">
+                  00
+                </div>
+                <div
+                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
+                >
+                  Minutes
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
+              >
+                <div id="seconds" class="text-2xl md:text-3xl font-medium">
+                  00
+                </div>
+                <div
+                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
+                >
+                  Seconds
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <button onclick="scrollToSection('rsvp')" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                     RSVP Now
                 </button> -->
-            </div>
         </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-sage-600"></i>
-        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i data-lucide="chevron-down" class="w-6 h-6 text-sage-600"></i>
+      </div>
     </section>
 
     <!-- Our Story Section -->
     <section id="story" class="py-20 z-10 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold">Lời Hứa</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-5 gap-12 items-center z-10 !text-white">
-                <div class="space-y-8 md:col-span-3">
-                    <div>
-                        <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">Ngọc Tuấn</h3>
-                        <p class="leading-relaxed md:text-2xl">
-                            Two years later, NTuấn returned to that same café. As NLoan opened what she thought was a new book, she found pages filled with their memories and a simple question: "Will you write the rest of our story together?" The ring was hidden in the bookmark.
-                        </p>
-                    </div>
-                </div>
-                <div class="relative md:col-span-2">
-                    <img src="./wwwroot/banner/TAY_0831.JPG" 
-                         alt="Couple Photo" 
-                         class="rounded-lg shadow-lg w-full">
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"></div>
-                    <div class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"></div>
-                </div>
-            </div>
-            <div class="md:grid md:mt-0 md:grid-cols-5 gap-12 items-center z-10 !text-white flex flex-col-reverse mt-4">
-                 <div class="relative md:col-span-2">
-                    <img src="./wwwroot/banner/TAY_0831.JPG" 
-                         alt="Couple Photo" 
-                         class="rounded-lg shadow-lg w-full">
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"></div>
-                    <div class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"></div>
-                </div>
-                <div class="space-y-8 md:col-span-3">
-                    <div>
-                        <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">Ngọc Loan</h3>
-                        <p class="leading-relaxed md:text-2xl">
-                            Two years later, NTuấn returned to that same café. As NLoan opened what she thought was a new book, she found pages filled with their memories and a simple question: "Will you write the rest of our story together?" The ring was hidden in the bookmark.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
+          >
+            Lời Hứa
+          </h2>
         </div>
+
+        <div class="grid md:grid-cols-5 gap-12 items-center z-10 !text-white">
+          <div class="space-y-8 md:col-span-3">
+            <div>
+              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
+                Ngọc Tuấn
+              </h3>
+              <p class="leading-relaxed md:text-2xl">
+                Anh không hứa sẽ luôn làm em cười, nhưng anh hứa sẽ là người lau nước mắt khi em buồn.
+Anh không hứa rằng cuộc sống sau này sẽ luôn dễ dàng, nhưng anh hứa sẽ nắm tay em đi qua mọi khó khăn.
+Từ hôm nay, và mãi về sau, anh hứa sẽ luôn ở đây – là bờ vai, là người bạn, là người yêu thương em bằng cả trái tim mình.
+              </p>
+            </div>
+          </div>
+          <div class="relative md:col-span-2">
+            <img
+              src="./wwwroot/banner/TAY_0831.JPG"
+              alt="Couple Photo"
+              class="rounded-lg shadow-lg w-full"
+            />
+            <div
+              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
+            ></div>
+            <div
+              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
+            ></div>
+          </div>
+        </div>
+        <div
+          class="md:grid md:mt-0 md:grid-cols-5 gap-12 items-center z-10 !text-white flex flex-col-reverse mt-4"
+        >
+          <div class="relative md:col-span-2">
+            <img
+              src="./wwwroot/banner/TAY_0831.JPG"
+              alt="Couple Photo"
+              class="rounded-lg shadow-lg w-full"
+            />
+            <div
+              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
+            ></div>
+            <div
+              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
+            ></div>
+          </div>
+          <div class="space-y-8 md:col-span-3">
+            <div>
+              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
+                Ngọc Loan
+              </h3>
+              <p class="leading-relaxed md:text-2xl">
+                Em không cần một câu chuyện cổ tích, chỉ cần anh – là chính anh – ở bên em mỗi ngày.
+Em mong rằng chúng ta sẽ luôn giữ được nụ cười, sự dịu dàng và sự kiên nhẫn dành cho nhau.
+Em chúc chúng ta một cuộc sống đủ giản dị để thấy hạnh phúc trong những điều nhỏ nhất, và đủ yêu thương để cùng nhau đi hết con đường dài phía trước.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Wedding Details Section -->
     <section id="details" class="py-20 z-10 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold">Thông Tin Lễ Cưới</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Ceremony -->
-                <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
-                   <span class="text-[red] text-6xl">&#10084;</span>
-                    <h3 class="text-4xl mb-4">Vu Quy</h3>
-                    <div class="space-y-2 text-gray-600">
-                         <p class="flex items-center justify-center">
-                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                            9:00 AM - 11:00 AM
-                        </p>
-                        <p class="flex items-center justify-center">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            29, Tháng 6, 2025 - 05, Tháng 6, 2025 ÂL
-                        </p>
-                       
-                        <p class="flex items-center justify-center">
-                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
-                            Tại: Trung Phú 6, Vĩnh Phú, Thoại Sơn, An Giang
-                        </p>
-                        <!-- <p class="text-sm text-gray-500 mt-4">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
+          >
+            Thông Tin Lễ Cưới
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Ceremony -->
+          <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
+            <span class="text-[red] text-6xl">&#10084;</span>
+            <h3 class="text-4xl mb-4">Vu Quy</h3>
+            <div class="space-y-2 text-gray-600">
+              <p class="flex items-center justify-center">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                9:00 AM - 11:00 AM
+              </p>
+              <p class="flex items-center justify-center">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                29, Tháng 6, 2025 - 05, Tháng 6, 2025 ÂL
+              </p>
+
+              <p class="flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                <a href="https://maps.app.goo.gl/HkMWSLvD4Xrx9Mjh8" class="text-[blue]" target="_blank">
+                    Tại: Trung Phú 6, Vĩnh Phú, Thoại Sơn, An Giang
+                </a>
+              </p>
+              <!-- <p class="text-sm text-gray-500 mt-4">
                             1234 Vineyard Lane<br>
                             Napa Valley, CA 94558
                         </p> -->
-                    </div>
-                </div>
-                
-                <!-- Reception -->
-                <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
-                    <span class="text-[red] text-6xl">&#10084;</span>
-                    <h3 class="text-4xl mb-4">Tân Hôn</h3>
-                    <div class="space-y-2 text-gray-600">
-                         <p class="flex items-center justify-center">
-                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                            10:00 AM - 12:00 AM
-                        </p>
-                        <p class="flex items-center justify-center">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            30, Tháng 6, 2025 - 06, Tháng 6, 2025 ÂL
-                        </p>
-                       
-                        <p class="flex items-center justify-center">
-                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
-                           Tại: TT. An Châu, Châu Thành, An Giang
-                        </p>
-                        <!-- <p class="text-sm text-gray-500 mt-4">
+            </div>
+          </div>
+
+          <!-- Reception -->
+          <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
+            <span class="text-[red] text-6xl">&#10084;</span>
+            <h3 class="text-4xl mb-4">Tân Hôn</h3>
+            <div class="space-y-2 text-gray-600">
+              <p class="flex items-center justify-center">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                10:00 AM - 12:00 AM
+              </p>
+              <p class="flex items-center justify-center">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                30, Tháng 6, 2025 - 06, Tháng 6, 2025 ÂL
+              </p>
+
+              <p class="flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                <a href="https://maps.app.goo.gl/3gFJVJZo9wqizK8TA"  class="text-[blue]" target="_blank">
+                Tại: TT. An Châu, Châu Thành, An Giang
+
+                </a>
+              </p>
+              <!-- <p class="text-sm text-gray-500 mt-4">
                             Dinner, Dancing & Celebration<br>
                             Cocktail Hour: 6:00 PM
                         </p> -->
-                    </div>
-                </div>
             </div>
-            
-            <!-- Additional Info -->
-            <!-- <div class="mt-12 max-w-2xl mx-auto text-center bg-sage-50 rounded-lg p-8">
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <!-- <div class="mt-12 max-w-2xl mx-auto text-center bg-sage-50 rounded-lg p-8">
                 <h3 class="text-xl gradient-text mb-4">Dress Code</h3>
                 <p class="text-gray-600 mb-4">
                     Cocktail attire requested. We'll be celebrating in a garden setting, so comfortable shoes are recommended.
@@ -336,203 +483,521 @@
                     The ceremony will be outdoors with an indoor reception to follow.
                 </p>
             </div> -->
-        </div>
+      </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-20 z-10 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">Album Cưới</h2>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl gradient-text mb-6 line-divider">
+            Album Cưới
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden">
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_2969.JPG"
+              alt="Gallery Photo 1"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_3032.JPG"
+              alt="Gallery Photo 2"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_3107.JPG"
+              alt="Gallery Photo 3"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_3154.JPG"
+              alt="Gallery Photo 4"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_3183.JPG"
+              alt="Gallery Photo 5"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/TAY_0896.JPG"
+              alt="Gallery Photo 6"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_2906.JPG"
+              alt="Gallery Photo 7"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
+          >
+            <img
+              src="./wwwroot/journey/HNW_3083.JPG"
+              alt="Gallery Photo 8"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+        </div>
+        <style>
+        
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .bg-soft-gray {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .photo-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .photo-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .photo-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Fix for all image types */
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
+        /* Aspect ratio containers */
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+        
+        .aspect-landscape {
+            aspect-ratio: 4 / 3;
+        }
+        
+        .aspect-portrait {
+            aspect-ratio: 3 / 4;
+        }
+        
+        .aspect-wide {
+            aspect-ratio: 16 / 9;
+        }
+        
+        .aspect-tall {
+            aspect-ratio: 2 / 3;
+        }
+        
+        /* Flexible height for main layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr 1fr;
+                min-height: 600px;
+            }
+        }
+        
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .left-column > div {
+            flex: 1;
+            min-height: 250px;
+        }
+        
+        @media (min-width: 1024px) {
+            .left-column > div {
+                min-height: 0;
+            }
+        }
+        
+        .right-column {
+            min-height: 500px;
+        }
+        
+        @media (min-width: 1024px) {
+            .right-column {
+                min-height: 0;
+            }
+        }
+    </style>
+        <main class="container mx-auto px-4 pb-16 max-w-7xl">
+        <!-- Featured Layout Section -->
+
+        <!-- Additional Gallery Sections -->
+        <div class="space-y-16">
+            <!-- Section 2 - Reverse Layout -->
+            <div class="main-layout">
+                <!-- Left Column - Large photo -->
+                <div class="photo-container rounded-2xl  photo-hover right-column order-2 lg:order-1">
+                    <div class="image-wrapper rounded-xl h-full">
+                        <img src="./wwwroot/journey/HNW_3083.JPG" 
+                             alt="Ảnh cưới lớn 2" 
+                             loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- Right Column - Two stacked photos -->
+                <div class="left-column order-1 lg:order-2">
+                    <!-- Top Right Photo -->
+                    <div class="photo-container rounded-2xl  photo-hover">
+                        <div class="image-wrapper rounded-xl h-full">
+                            <img src="./wwwroot/journey/HNW_3107.JPG" 
+                                 alt="Khoảnh khắc cưới 3" 
+                                 loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Right Photo -->
+                    <div class="photo-container rounded-2xl  photo-hover">
+                        <div class="image-wrapper rounded-xl h-full">
+                            <img src="./wwwroot/journey/HNW_3154.JPG" 
+                                 alt="Khoảnh khắc cưới 4" 
+                                 loading="lazy">
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_2969.JPG" 
-                         alt="Gallery Photo 1" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+
+            <!-- Section 3 - Triple Layout with flexible aspect ratios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-landscape">
+                        <img src="./wwwroot/journey/HNW_3183.JPG" 
+                             alt="Ảnh cưới 5" 
+                             loading="lazy">
+                    </div>
                 </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_3032.JPG" 
-                         alt="Gallery Photo 2" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-portrait">
+                        <img src="./wwwroot/journey/TAY_0896.JPG" 
+                             alt="Ảnh cưới 6" 
+                             loading="lazy">
+                    </div>
                 </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_3107.JPG" 
-                         alt="Gallery Photo 3" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                
+                <div class="photo-container rounded-2xl  photo-hover md:col-span-2 lg:col-span-1">
+                    <div class="image-wrapper rounded-xl aspect-square">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=400&fit=crop" 
+                             alt="Ảnh cưới 7" 
+                             loading="lazy">
+                    </div>
                 </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_3154.JPG" 
-                         alt="Gallery Photo 4" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_3183.JPG" 
-                         alt="Gallery Photo 5" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/TAY_0896.JPG" 
-                         alt="Gallery Photo 6" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
+            </div>
+
+            <!-- Section 4 - Wide Panoramic -->
+            <div class="photo-container rounded-2xl  photo-hover">
+                <div class="image-wrapper rounded-xl aspect-wide">
                     <img src="./wwwroot/journey/HNW_2906.JPG" 
-                         alt="Gallery Photo 7" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                         alt="Ảnh panoramic" 
+                         loading="lazy">
                 </div>
-                <div class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer">
-                    <img src="./wwwroot/journey/HNW_3083.JPG" 
-                         alt="Gallery Photo 8" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+            </div>
+
+            <!-- Section 5 - Four Square Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-square">
+                        <img src="./wwwroot/journey/HNW_2969.JPG" 
+                             alt="Ảnh vuông 1" 
+                             loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-square">
+                        <img src="./wwwroot/journey/HNW_3032.JPG" 
+                             alt="Ảnh vuông 2" 
+                             loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-square">
+                        <img src="./wwwroot/journey/HNW_3154.JPG" 
+                             alt="Ảnh vuông 3" 
+                             loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-square">
+                        <img src="./wwwroot/journey/TAY_0896.JPG" 
+                             alt="Ảnh vuông 4" 
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 - Mixed Aspect Ratios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="photo-container rounded-2xl  photo-hover">
+                    <div class="image-wrapper rounded-xl aspect-tall">
+                        <img src="./wwwroot/journey/HNW_3154.JPG" 
+                             alt="Ảnh dọc 1" 
+                             loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="photo-container rounded-2xl  photo-hover md:col-span-2">
+                    <div class="image-wrapper rounded-xl aspect-wide">
+                        <img src="./wwwroot/journey/HNW_2969.JPG" 
+                             alt="Ảnh ngang rộng" 
+                             loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
+
+    </main>
+      </div>
+    </section>
+    <!-- Map Section -->
+    <section id="map" class="py-20 z-10 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
+          >
+            Chỉ Đường
+          </h2>
+        </div>
+        <div
+          class="bg-gray-50 rounded-lg p-2 text-center hover-lift w-full md:max-w-[60%] mx-auto [&>iframe]:rounded-lg [&>iframe]:w-full [&>iframe]:h-[400px] [&>iframe]:shadow-lg"
+        >
+          <p class="text-xl text-gray-500 mb-2">
+            Chúng mình rất mong được đón tiếp bạn <br />
+            hãy đến với chúng mình bằng <br />hướng dẫn bên dưới nhé!
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m25!1m12!1m3!1d115111.45528611587!2d105.218271025947!3d10.401377427696822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m10!3e6!4m3!3m2!1d10.4445873!2d105.38040819999999!4m4!2s10.343121%2C105.214173!3m2!1d10.343290999999999!2d105.2140045!5e1!3m2!1svi!2s!4v1748187380502!5m2!1svi!2s"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </section>
 
-    
-
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12 z-10">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-            <div class="flex items-center justify-center space-x-2 mb-6">
-                <!-- <div class="w-8 h-8 rounded-full bg-sage-600 flex items-center justify-center">
+    <footer class="bg-gray-800 text-white py-12 z-10 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <div class="flex items-center justify-center space-x-2 mb-6">
+          <!-- <div class="w-8 h-8 rounded-full bg-sage-600 flex items-center justify-center">
                     <span class="text-sm">L&T</span>
                 </div> -->
-                <span class="text-xl">Ngọc Loan & Ngọc Tuấn</span>
-            </div>
-            
-            <p class="text-gray-400 mb-6">Thank you for being part of our love story</p>
-            
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
-            </div>
-            
-            <div class="border-t border-gray-700 pt-6">
-                <p class="text-gray-500 text-sm">© 2024 Ngọc Loan & Ngọc Tuấn Wedding. Made with ❤️</p>
-            </div>
+          <span class="text-xl">Ngọc Loan & Ngọc Tuấn</span>
         </div>
+
+        <p class="text-gray-400 mb-6">
+          Thank you for being part of our love story
+        </p>
+
+        <!-- <div class="flex justify-center space-x-6 mb-8">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"
+            >Instagram</a
+          >
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"
+            >Facebook</a
+          >
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"
+            >Twitter</a
+          >
+        </div> -->
+
+        <div class="border-t border-gray-700 pt-6">
+          <p class="text-gray-500 text-sm gradient-text">
+            © 2025 Ngọc Loan & Ngọc Tuấn Wedding. From us with love ❤️
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" 
-            class="fixed z-10 bottom-8 right-8 bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0">
-        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    <button
+      id="back-to-top"
+      class="fixed z-10 bottom-8 right-8 bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0"
+    >
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
     <!-- JavaScript -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // Wedding date countdown
-        const weddingDate = new Date('2025-06-29T00:00:00').getTime();
-        
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = weddingDate - now;
-            
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            } else {
-                document.getElementById('countdown').innerHTML = '<div class="text-2xl gradient-text">The Big Day is Here! 🎉</div>';
-            }
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Wedding date countdown
+      const weddingDate = new Date("2025-06-29T00:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+
+        if (timeLeft > 0) {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = days
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("hours").textContent = hours
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("minutes").textContent = minutes
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("seconds").textContent = seconds
+            .toString()
+            .padStart(2, "0");
+        } else {
+          document.getElementById("countdown").innerHTML =
+            '<div class="text-2xl gradient-text">The Big Day is Here! 🎉</div>';
         }
-        
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+      }
+
+      // Update countdown every second
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for navigation links
+      function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
-        
-        // Smooth scrolling for navigation links
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+      }
+
+      // Add click listeners to navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          scrollToSection(targetId);
+
+          // Close mobile menu if open
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Back to top button
+      const backToTopBtn = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.remove("translate-y-20", "opacity-0");
+          backToTopBtn.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopBtn.classList.add("translate-y-20", "opacity-0");
+          backToTopBtn.classList.remove("translate-y-0", "opacity-100");
         }
-        
-        // Add click listeners to navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                scrollToSection(targetId);
-                
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
-        
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
-                backToTopBtn.classList.add('translate-y-0', 'opacity-100');
-            } else {
-                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
-                backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
-            }
+      });
+
+      // RSVP Form submission
+      document
+        .getElementById("rsvp-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Show success message
+          alert("Thank you for your RSVP! We'll be in touch soon.");
+
+          // Here you would typically send the form data to your server
+          // For demo purposes, we'll just reset the form
+          this.reset();
         });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
-        
-        // RSVP Form submission
-        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            alert('Thank you for your RSVP! We\'ll be in touch soon.');
-            
-            // Here you would typically send the form data to your server
-            // For demo purposes, we'll just reset the form
-            this.reset();
-        });
-        
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections for scroll animations
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+      }, observerOptions);
+
+      // Observe all sections for scroll animations
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
     </script>
-</body>
+  </body>
 </html>
