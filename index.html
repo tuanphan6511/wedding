@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ngọc Loan & Ngọc Tuấn - Wedding</title>
     <meta
-  name="description"
-  content="Hãy cùng chúng mình chung vui ngày cưới vào 29 tháng 6, 2025"
-/>
+      name="description"
+      content="Hãy cùng chúng mình chung vui ngày cưới vào 29 tháng 6, 2025"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,9 +54,10 @@
     </script>
 
     <style>
-      html, body {
-      font-size: 16px !important; /* hoặc 18px nếu bạn muốn lớn hơn */
-    }
+      html,
+      body {
+        font-size: 16px !important; /* hoặc 18px nếu bạn muốn lớn hơn */
+      }
       .gradient-text {
         background: #ffe5ba; /*linear-gradient(135deg, #7da067 0%, #526742 100%);*/
         -webkit-background-clip: text;
@@ -150,7 +151,7 @@
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
               >L&T</a
             > -->
-            
+
             <a
               href="#details"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
@@ -187,7 +188,7 @@
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
               >Trang chủ</a
             > -->
-            
+
             <a
               href="#details"
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
@@ -336,13 +337,14 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div
+      <a
+        href="#details"
         class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
       >
-        <i data-lucide="chevron-down" class="w-6 h-6 text-sage-600"></i>
-      </div>
+        <i data-lucide="chevron-down" class="w-6 h-6 text-[#ffe5ba]"></i>
+      </a>
     </section>
-
+    
     <!-- Wedding Details Section -->
     <section id="details" class="py-20 z-10 relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -353,7 +355,6 @@
             Sự kiện cưới
           </h2>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Ceremony -->
           <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
@@ -739,7 +740,9 @@
             <!-- Section 3 - Triple Layout with flexible aspect ratios -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div class="photo-container rounded-2xl photo-hover">
-                <div class="image-wrapper rounded-xl desktop:aspect-landscape aspect-square">
+                <div
+                  class="image-wrapper rounded-xl desktop:aspect-landscape aspect-square"
+                >
                   <img
                     src="./wwwroot/journey/HNW_3183.JPG"
                     alt="Ảnh cưới 5"
@@ -827,7 +830,9 @@
 
             <!-- Section 6 - Mixed Aspect Ratios -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div class="photo-container rounded-2xl photo-hover md:col-span-2">
+              <div
+                class="photo-container rounded-2xl photo-hover md:col-span-2"
+              >
                 <div class="image-wrapper rounded-xl aspect-tall">
                   <img
                     src="./wwwroot/journey/HNW_3154.JPG"
@@ -840,7 +845,9 @@
               <div
                 class="photo-container rounded-2xl photo-hover md:col-span-2"
               >
-                <div class="image-wrapper rounded-xl aspect-[9/16] desktop:aspect-wide">
+                <div
+                  class="image-wrapper rounded-xl aspect-[9/16] desktop:aspect-wide"
+                >
                   <img
                     src="./wwwroot/journey/HNW_2969.JPG"
                     alt="Ảnh ngang rộng"
@@ -1052,18 +1059,21 @@
       const backToTopBtn = document.getElementById("back-to-top");
       const musicBtn = document.getElementById("music-button");
 
-
       window.addEventListener("scroll", () => {
         if (window.pageYOffset > 300) {
           backToTopBtn.classList.remove("translate-y-20", "opacity-0");
           backToTopBtn.classList.add("translate-y-0", "opacity-100");
-          // musicBtn.classList.remove("translate-y-20", "opacity-0");
-          // musicBtn.classList.add("translate-y-0", "opacity-100");
+          if (window.window.innerWidth < 768) {
+            musicBtn.classList.remove("translate-y-20", "opacity-0");
+            musicBtn.classList.add("translate-y-0", "opacity-100");
+          }
         } else {
           backToTopBtn.classList.add("translate-y-20", "opacity-0");
           backToTopBtn.classList.remove("translate-y-0", "opacity-100");
-          // musicBtn.classList.add("translate-y-20", "opacity-0");
-          // musicBtn.classList.remove("translate-y-0", "opacity-100");
+          if (window.window.innerWidth < 768) {
+            musicBtn.classList.add("translate-y-20", "opacity-0");
+            musicBtn.classList.remove("translate-y-0", "opacity-100");
+          }
         }
       });
 
