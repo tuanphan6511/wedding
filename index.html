@@ -45,18 +45,20 @@
                 900: "#39462f",
               },
             },
+            screens: {
+              desktop: "1200px", // >=1024px là desktop
+            },
           },
         },
       };
     </script>
 
     <style>
+      html, body {
+      font-size: 16px !important; /* hoặc 18px nếu bạn muốn lớn hơn */
+    }
       .gradient-text {
-        background: rgb(
-          255,
-          229,
-          186
-        ); /*linear-gradient(135deg, #7da067 0%, #526742 100%);*/
+        background: #ffe5ba; /*linear-gradient(135deg, #7da067 0%, #526742 100%);*/
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -148,15 +150,16 @@
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
               >L&T</a
             > -->
-            <a
-              href="#story"
-              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
-              >Lời Hứa</a
-            >
+            
             <a
               href="#details"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
-              >Thông Tin Lễ Cưới</a
+              >Sự kiện cưới</a
+            >
+            <a
+              href="#story"
+              class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
+              >Cô dâu & Chú rể</a
             >
             <a
               href="#gallery"
@@ -166,7 +169,7 @@
             <a
               href="#map"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
-              >Chỉ Đường</a
+              >Bản Đồ</a
             >
           </div>
 
@@ -184,15 +187,16 @@
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
               >Trang chủ</a
             > -->
-            <a
-              href="#story"
-              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
-              >Lời Hứa</a
-            >
+            
             <a
               href="#details"
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
-              >Thông Tin Lễ Cưới</a
+              >Sự kiện cưới</a
+            >
+            <a
+              href="#story"
+              class="text-gray-600 hover:text-sage-600 transition-colors py-2"
+              >Cô dâu & Chú rể</a
             >
             <a
               href="#gallery"
@@ -202,7 +206,7 @@
             <a
               href="#map"
               class="text-gray-600 hover:text-sage-600 transition-colors py-2"
-              >Chỉ Đường</a
+              >Bản Đồ</a
             >
           </div>
         </div>
@@ -225,10 +229,12 @@
       </div>
 
       <!-- Content -->
-      <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div
+        class="relative z-10 text-center max-w-4xl mx-auto px-4 desktop:mt-[60px]"
+      >
         <div class="fade-in">
           <p
-            class="text-xl md:text-5xl text-gray-600 mb-8 font-light tracking-wide !text-white"
+            class="text-lg md:text-5xl text-gray-600 mb-8 font-light tracking-wide !text-white"
           >
             Wedding
           </p>
@@ -267,7 +273,7 @@
             id="countdown"
             class="flex justify-center space-x-6 md:space-x-8 mb-12 !text-black"
           >
-            <div class="text-center">
+            <div class="text-center desktop:w-[104px]">
               <div
                 class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
               >
@@ -279,7 +285,7 @@
                 </div>
               </div>
             </div>
-            <div class="text-center">
+            <div class="text-center desktop:w-[104px]">
               <div
                 class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
               >
@@ -293,7 +299,7 @@
                 </div>
               </div>
             </div>
-            <div class="text-center">
+            <div class="text-center desktop:w-[104px]">
               <div
                 class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
               >
@@ -307,7 +313,7 @@
                 </div>
               </div>
             </div>
-            <div class="text-center">
+            <div class="text-center desktop:w-[104px]">
               <div
                 class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
               >
@@ -337,81 +343,6 @@
       </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section id="story" class="py-20 z-10 relative">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-16">
-          <h2
-            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
-          >
-            Lời Hứa
-          </h2>
-        </div>
-
-        <div class="grid md:grid-cols-5 gap-12 items-center z-10 !text-white">
-          <div class="space-y-8 md:col-span-3">
-            <div>
-              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
-                Ngọc Tuấn
-              </h3>
-              <p class="leading-relaxed md:text-2xl">
-                Anh không hứa sẽ luôn làm em cười, nhưng anh hứa sẽ là người lau
-                nước mắt khi em buồn. Anh không hứa rằng cuộc sống sau này sẽ
-                luôn dễ dàng, nhưng anh hứa sẽ nắm tay em đi qua mọi khó khăn.
-                Từ hôm nay, và mãi về sau, anh hứa sẽ luôn ở đây – là bờ vai, là
-                người bạn, là người yêu thương em bằng cả trái tim mình.
-              </p>
-            </div>
-          </div>
-          <div class="relative md:col-span-2">
-            <img
-              src="./wwwroot/banner/TAY_0831.JPG"
-              alt="Couple Photo"
-              class="rounded-lg shadow-lg w-full"
-            />
-            <div
-              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
-            ></div>
-            <div
-              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
-            ></div>
-          </div>
-        </div>
-        <div
-          class="md:grid md:mt-0 md:grid-cols-5 gap-12 items-center z-10 !text-white flex flex-col-reverse mt-4"
-        >
-          <div class="relative md:col-span-2">
-            <img
-              src="./wwwroot/banner/TAY_0831.JPG"
-              alt="Couple Photo"
-              class="rounded-lg shadow-lg w-full"
-            />
-            <div
-              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
-            ></div>
-            <div
-              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
-            ></div>
-          </div>
-          <div class="space-y-8 md:col-span-3">
-            <div>
-              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
-                Ngọc Loan
-              </h3>
-              <p class="leading-relaxed md:text-2xl">
-                Em không cần một câu chuyện cổ tích, chỉ cần anh – là chính anh
-                – ở bên em mỗi ngày. Em mong rằng chúng ta sẽ luôn giữ được nụ
-                cười, sự dịu dàng và sự kiên nhẫn dành cho nhau. Em chúc chúng
-                ta một cuộc sống đủ giản dị để thấy hạnh phúc trong những điều
-                nhỏ nhất, và đủ yêu thương để cùng nhau đi hết con đường dài
-                phía trước.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Wedding Details Section -->
     <section id="details" class="py-20 z-10 relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -419,7 +350,7 @@
           <h2
             class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
           >
-            Thông Tin Lễ Cưới
+            Sự kiện cưới
           </h2>
         </div>
 
@@ -433,13 +364,13 @@
                 <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
                 9:00 AM - 11:00 AM
               </p>
-              <p class="flex items-center justify-center">
-                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+              <p class="flex items-start justify-center">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2 mt-[4px]"></i>
                 29, Tháng 6, 2025 - 05, Tháng 6, 2025 ÂL
               </p>
 
-              <p class="flex items-center justify-center">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+              <p class="flex items-start justify-center">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-[4px]"></i>
                 <a
                   href="https://maps.app.goo.gl/HkMWSLvD4Xrx9Mjh8"
                   class="text-[blue]"
@@ -464,13 +395,13 @@
                 <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
                 10:00 AM - 12:00 AM
               </p>
-              <p class="flex items-center justify-center">
-                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+              <p class="flex items-start justify-center">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2 mt-[4px]"></i>
                 30, Tháng 6, 2025 - 06, Tháng 6, 2025 ÂL
               </p>
 
-              <p class="flex items-center justify-center">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+              <p class="flex items-start justify-center">
+                <i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-[4px]"></i>
                 <a
                   href="https://maps.app.goo.gl/3gFJVJZo9wqizK8TA"
                   class="text-[blue]"
@@ -499,7 +430,80 @@
             </div> -->
       </div>
     </section>
+    <!-- Our Story Section -->
+    <section id="story" class="py-20 z-10 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
+          >
+            Cô dâu & Chú rể
+          </h2>
+        </div>
 
+        <div class="grid md:grid-cols-5 gap-12 items-center z-10 !text-white">
+          <div class="space-y-8 md:col-span-3">
+            <div>
+              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
+                Ngọc Tuấn
+              </h3>
+              <p class="leading-relaxed md:text-2xl">
+                Anh không hứa sẽ luôn làm em cười, nhưng anh hứa sẽ là người lau
+                nước mắt khi em buồn. Anh không hứa rằng cuộc sống sau này sẽ
+                luôn dễ dàng, nhưng anh hứa sẽ nắm tay em đi qua mọi khó khăn.
+                Từ hôm nay, và mãi về sau, anh hứa sẽ luôn ở đây – là bờ vai, là
+                người bạn, là người yêu thương em bằng cả trái tim mình.
+              </p>
+            </div>
+          </div>
+          <div class="relative md:col-span-2">
+            <img
+              src="./wwwroot/banner/TAY_0831.JPG"
+              alt="Couple Photo"
+              class="rounded-lg shadow-lg w-full"
+            />
+            <!-- <div
+              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
+            ></div>
+            <div
+              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
+            ></div> -->
+          </div>
+        </div>
+        <div
+          class="md:grid md:mt-0 md:grid-cols-5 gap-12 items-center z-10 !text-white flex flex-col-reverse mt-4"
+        >
+          <div class="relative md:col-span-2">
+            <img
+              src="./wwwroot/banner/TAY_0831.JPG"
+              alt="Couple Photo"
+              class="rounded-lg shadow-lg w-full"
+            />
+            <!-- <div
+              class="absolute -bottom-6 -right-6 w-24 h-24 bg-sage-100 rounded-lg"
+            ></div>
+            <div
+              class="absolute -top-6 -left-6 w-16 h-16 bg-sage-200 rounded-lg"
+            ></div> -->
+          </div>
+          <div class="space-y-8 md:col-span-3">
+            <div>
+              <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
+                Ngọc Loan
+              </h3>
+              <p class="leading-relaxed md:text-2xl">
+                Em không cần một câu chuyện cổ tích, chỉ cần anh – là chính anh
+                – ở bên em mỗi ngày. Em mong rằng chúng ta sẽ luôn giữ được nụ
+                cười, sự dịu dàng và sự kiên nhẫn dành cho nhau. Em chúc chúng
+                ta một cuộc sống đủ giản dị để thấy hạnh phúc trong những điều
+                nhỏ nhất, và đủ yêu thương để cùng nhau đi hết con đường dài
+                phía trước.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Gallery Section -->
     <section id="gallery" class="py-20 z-10 relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -735,7 +739,7 @@
             <!-- Section 3 - Triple Layout with flexible aspect ratios -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div class="photo-container rounded-2xl photo-hover">
-                <div class="image-wrapper rounded-xl aspect-landscape">
+                <div class="image-wrapper rounded-xl desktop:aspect-landscape aspect-square">
                   <img
                     src="./wwwroot/journey/HNW_3183.JPG"
                     alt="Ảnh cưới 5"
@@ -769,7 +773,7 @@
 
             <!-- Section 4 - Wide Panoramic -->
             <div class="photo-container rounded-2xl photo-hover">
-              <div class="image-wrapper rounded-xl aspect-wide">
+              <div class="image-wrapper rounded-xl aspect-[8/8]">
                 <img
                   src="./wwwroot/journey/HNW_2906.JPG"
                   alt="Ảnh panoramic"
@@ -822,8 +826,8 @@
             </div>
 
             <!-- Section 6 - Mixed Aspect Ratios -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="photo-container rounded-2xl photo-hover">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div class="photo-container rounded-2xl photo-hover md:col-span-2">
                 <div class="image-wrapper rounded-xl aspect-tall">
                   <img
                     src="./wwwroot/journey/HNW_3154.JPG"
@@ -836,7 +840,7 @@
               <div
                 class="photo-container rounded-2xl photo-hover md:col-span-2"
               >
-                <div class="image-wrapper rounded-xl aspect-wide">
+                <div class="image-wrapper rounded-xl aspect-[9/16] desktop:aspect-wide">
                   <img
                     src="./wwwroot/journey/HNW_2969.JPG"
                     alt="Ảnh ngang rộng"
@@ -856,7 +860,7 @@
           <h2
             class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
           >
-            Chỉ Đường
+            Bản Đồ
           </h2>
         </div>
         <div
@@ -914,12 +918,13 @@
     <!-- Back to Top Button -->
     <button
       id="back-to-top"
-      class="fixed z-10 bottom-8 right-8 bg-sage-600 hover:bg-sage-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0"
+      class="fixed z-10 bottom-8 right-8 hover:bg-[#ffe5ba] bg-[#ffe5ba66] text-white p-3 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0"
     >
       <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
+
     <button
-      class="absolute z-10 top-[5rem] right-2 text-white p-3 rounded-full shadow-lg"
+      class="fixed z-10 bottom-[80px] right-8 z-10 text-white bg-[#ffe5ba66] p-3 rounded-full shadow-lg"
       onclick="toggleMusic()"
       id="music-button"
     >
@@ -962,12 +967,11 @@
         if (audio.paused) {
           audio.play();
           audio.muted = false; // Bỏ tắt tiếng khi phát
-
-          musicButton.innerHTML = `<i data-lucide="pause" class="w-5 h-5"></i>`;
+          musicButton.innerHTML = `<i data-lucide="music-2" class="w-5 h-5"></i>`;
         } else {
           audio.pause();
           audio.muted = true; // Tắt tiếng khi dừng
-          musicButton.innerHTML = `<i data-lucide="music-2" class="w-5 h-5"></i>`;
+          musicButton.innerHTML = `<i data-lucide="pause" class="w-5 h-5"></i>`;
         }
         lucide.createIcons();
       }
