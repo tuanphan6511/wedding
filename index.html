@@ -390,8 +390,10 @@
         <!-- Photo 1 -->
         <div class="group cursor-pointer scale-95">
           <div
-            data-aos="fade-left"
-            data-aos-delay="1000"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-offset="0"
+            data-aos-duration="500"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -406,6 +408,7 @@
         <div class="group cursor-pointer scale-110">
           <div
             data-aos="zoom-in"
+            data-aos-offset="0"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -419,8 +422,10 @@
         <!-- Photo 3 -->
         <div class="group cursor-pointer scale-95">
           <div
-            data-aos="fade-right"
-            data-aos-delay="1000"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-offset="0"
+            data-aos-duration="500"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -602,7 +607,8 @@
               <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
                 Ngọc Tuấn
               </h3>
-              <p class="leading-relaxed md:text-2xl">
+              <p class="leading-relaxed md:text-2xl" data-aos="fade-up" data-aos-offset="0"
+     data-aos-duration="1000">
                 Anh không hứa sẽ luôn làm em cười, nhưng anh hứa sẽ là người lau
                 nước mắt khi em buồn. Anh không hứa rằng cuộc sống sau này sẽ
                 luôn dễ dàng, nhưng anh hứa sẽ nắm tay em đi qua mọi khó khăn.
@@ -646,7 +652,9 @@
               <h3 class="text-3xl md:text-4xl gradient-text mb-4 font-bold">
                 Ngọc Loan
               </h3>
-              <p class="leading-relaxed md:text-2xl">
+              <p class="leading-relaxed md:text-2xl" data-aos="fade-up"
+              data-aos-offset="0"
+     data-aos-duration="1000">
                 Em không cần một câu chuyện cổ tích, chỉ cần anh – là chính anh
                 – ở bên em mỗi ngày. Em mong rằng chúng ta sẽ luôn giữ được nụ
                 cười, sự dịu dàng và sự kiên nhẫn dành cho nhau. Em chúc chúng
@@ -668,82 +676,6 @@
           </h2>
         </div>
 
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden"
-        >
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_2969.JPG"
-              alt="Gallery Photo 1"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_3032.JPG"
-              alt="Gallery Photo 2"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_3107.JPG"
-              alt="Gallery Photo 3"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_3154.JPG"
-              alt="Gallery Photo 4"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_3183.JPG"
-              alt="Gallery Photo 5"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/TAY_0896.JPG"
-              alt="Gallery Photo 6"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_2906.JPG"
-              alt="Gallery Photo 7"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div
-            class="aspect-square overflow-hidden rounded-lg hover-lift cursor-pointer"
-          >
-            <img
-              src="./wwwroot/album/HNW_3083.JPG"
-              alt="Gallery Photo 8"
-              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-        </div>
         <style>
           .font-dancing {
             font-family: "Dancing Script", cursive;
@@ -854,9 +786,12 @@
             <div class="main-layout">
               <!-- Left Column - Large photo -->
               <div
+               data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000"
                 class="photo-container rounded-2xl photo-hover right-column order-2 lg:order-1"
               >
-                <div class="image-wrapper rounded-xl h-full">
+                <div class="image-wrapper rounded-xl h-full" >
                   <img
                     src="./wwwroot/album/HNW_3083.JPG"
                     alt="Ảnh cưới lớn 2"
@@ -866,9 +801,11 @@
               </div>
 
               <!-- Right Column - Two stacked photos -->
-              <div class="left-column order-1 lg:order-2">
+              <div class="left-column order-1 lg:order-2" >
                 <!-- Top Right Photo -->
-                <div class="photo-container rounded-2xl photo-hover">
+                <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000">
                   <div class="image-wrapper rounded-xl h-full">
                     <img
                       src="./wwwroot/album/HNW_3107.JPG"
@@ -879,7 +816,9 @@
                 </div>
 
                 <!-- Bottom Right Photo -->
-                <div class="photo-container rounded-2xl photo-hover">
+                <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000">
                   <div class="image-wrapper rounded-xl h-full">
                     <img
                       src="./wwwroot/album/HNW_3154.JPG"
@@ -893,7 +832,9 @@
 
             <!-- Section 3 - Triple Layout with flexible aspect ratios -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000">
                 <div
                   class="image-wrapper rounded-xl desktop:aspect-landscape aspect-square"
                 >
@@ -905,7 +846,9 @@
                 </div>
               </div>
 
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000">
                 <div class="image-wrapper rounded-xl aspect-portrait">
                   <img
                     src="./wwwroot/album/TAY_0896.JPG"
@@ -917,6 +860,9 @@
 
               <div
                 class="photo-container rounded-2xl photo-hover md:col-span-2 lg:col-span-1"
+                data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000"
               >
                 <div class="image-wrapper rounded-xl aspect-square">
                   <img
@@ -929,7 +875,9 @@
             </div>
 
             <!-- Section 4 - Wide Panoramic -->
-            <div class="photo-container rounded-2xl photo-hover">
+            <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000">
               <div class="image-wrapper rounded-xl aspect-[8/8]">
                 <img
                   src="./wwwroot/album/HNW_2906.JPG"
@@ -941,7 +889,9 @@
 
             <!-- Section 5 - Four Square Grid -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000" data-aos-delay="100">
                 <div class="image-wrapper rounded-xl aspect-square">
                   <img
                     src="./wwwroot/album/HNW_2969.JPG"
@@ -951,7 +901,9 @@
                 </div>
               </div>
 
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000" data-aos-delay="200">
                 <div class="image-wrapper rounded-xl aspect-square">
                   <img
                     src="./wwwroot/album/HNW_3032.JPG"
@@ -961,7 +913,9 @@
                 </div>
               </div>
 
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000" data-aos-delay="300">
                 <div class="image-wrapper rounded-xl aspect-square">
                   <img
                     src="./wwwroot/album/HNW_3154.JPG"
@@ -971,7 +925,9 @@
                 </div>
               </div>
 
-              <div class="photo-container rounded-2xl photo-hover">
+              <div class="photo-container rounded-2xl photo-hover" data-aos="fade-up"
+                data-aos-offset="400"
+                data-aos-duration="1000" data-aos-delay="400">
                 <div class="image-wrapper rounded-xl aspect-square">
                   <img
                     src="./wwwroot/album/TAY_0896.JPG"
@@ -985,6 +941,9 @@
             <!-- Section 6 - Mixed Aspect Ratios -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-duration="1000" data-aos-delay="300"
                 class="photo-container rounded-2xl photo-hover md:col-span-2"
               >
                 <div class="image-wrapper rounded-xl aspect-tall">
@@ -997,6 +956,9 @@
               </div>
 
               <div
+              data-aos="fade-up"
+                data-aos-offset="00"
+                data-aos-duration="1000" data-aos-delay="300"
                 class="photo-container rounded-2xl photo-hover md:col-span-2"
               >
                 <div
@@ -1096,7 +1058,80 @@
       <source src="./wwwroot/audio/911-lyrics--vietsub.mp3" type="audio/mpeg" />
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
-
+    <div id="loadingScreen" class="fixed inset-0 z-[9999] flex items-center justify-center custom-gradient !bg-[#ffe5ba]">
+        <!-- Delicate Particles Background -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="delicate-particle" style="left: 15%; animation-delay: 0s;">♡</div>
+            <div class="delicate-particle" style="left: 25%; animation-delay: 2s;">✧</div>
+            <div class="delicate-particle" style="left: 35%; animation-delay: 4s;">♡</div>
+            <div class="delicate-particle" style="left: 45%; animation-delay: 1s;">✧</div>
+            <div class="delicate-particle" style="left: 55%; animation-delay: 3s;">♡</div>
+            <div class="delicate-particle" style="left: 65%; animation-delay: 5s;">✧</div>
+            <div class="delicate-particle" style="left: 75%; animation-delay: 1.5s;">♡</div>
+            <div class="delicate-particle" style="left: 85%; animation-delay: 3.5s;">✧</div>
+        </div>
+        
+        <!-- Main Loading Content -->
+        <div class="text-center smooth-fade-in max-w-md mx-auto px-6">
+            <!-- Elegant Heart Container -->
+            <div class="mb-12 elegant-float">
+                <div class="relative inline-block">
+                    <!-- Main Heart -->
+                    <div class="gentle-heartbeat text-6xl mb-4" style="color: var(--accent-color);">♡</div>
+                    
+                    <!-- Subtle Decorative Elements -->
+                    <div class="absolute -top-2 -left-8">
+                        <div class="subtle-glow text-lg" style="color: var(--secondary-color); animation-delay: 0s;">✧</div>
+                    </div>
+                    <div class="absolute -top-2 -right-8">
+                        <div class="subtle-glow text-lg" style="color: var(--secondary-color); animation-delay: 1s;">✧</div>
+                    </div>
+                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+                        <div class="subtle-glow text-sm" style="color: var(--secondary-color); animation-delay: 2s;">✧</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Elegant Typography -->
+            <div class="mb-10">
+                <h1 class="font-serif text-4xl md:text-5xl font-light text-gradient mb-3 tracking-wide">
+                    Wedding
+                </h1>
+                <div class="w-16 h-px mx-auto mb-4" style="background-color: var(--accent-color);"></div>
+                <p class="text-lg font-light tracking-wider" style="color: var(--text-primary);">
+                    Đang chuẩn bị cho bạn
+                </p>
+            </div>
+            
+            <!-- Elegant Loading Indicator -->
+            <div class="mb-8">
+                <div class="flex justify-center mb-4">
+                    <div class="loading-ring"></div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-48 mx-auto mb-4">
+                    <div class="h-0.5 rounded-full overflow-hidden" style="background-color: rgba(255, 229, 186, 0.3);">
+                        <div class="elegant-progress h-full rounded-full" style="background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+                    </div>
+                </div>
+                
+                <!-- Loading Dots -->
+                <div class="flex justify-center space-x-1">
+                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0s;"></div>
+                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.3s;"></div>
+                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.6s;"></div>
+                </div>
+            </div>
+            
+            <!-- Elegant Quote -->
+            <div class="max-w-xs mx-auto">
+                <p class="font-serif text-sm italic font-light leading-relaxed" style="color: var(--text-secondary);">
+                    "Tình yêu là bản nhạc đẹp nhất của cuộc đời"
+                </p>
+            </div>
+        </div>
+    </div>
     <script>
       const audio = document.getElementById("bg-music");
 
@@ -1276,6 +1311,63 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+        // Simulate loading time with elegant timing
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                const mainContent = document.getElementById('mainContent');
+                
+                // Elegant fade out
+                loadingScreen.style.transition = 'opacity 1.5s ease-out, transform 1.5s ease-out';
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transform = 'scale(1.05)';
+                
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                    mainContent.style.opacity = '0';
+                    mainContent.style.transform = 'translateY(20px)';
+                    mainContent.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
+                    
+                    setTimeout(function() {
+                        mainContent.style.opacity = '1';
+                        mainContent.style.transform = 'translateY(0)';
+                    }, 100);
+                }, 1500);
+            }, 3000); // Show loading for 3 seconds for elegant experience
+        });
+        
+        // Create subtle floating elements
+        function createDelicateElement() {
+            const container = document.querySelector('#loadingScreen .absolute.inset-0');
+            const symbols = ['♡', '✧', '◦'];
+            const element = document.createElement('div');
+            
+            element.className = 'delicate-particle';
+            element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            element.style.left = Math.random() * 100 + '%';
+            element.style.fontSize = (Math.random() * 0.5 + 1) + 'rem';
+            element.style.animationDelay = Math.random() * 3 + 's';
+            element.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            
+            container.appendChild(element);
+            
+            setTimeout(() => {
+                if (element.parentNode) {
+                    element.parentNode.removeChild(element);
+                }
+            }, 10000);
+        }
+        
+        // Create elements periodically but subtly
+        const elementInterval = setInterval(createDelicateElement, 2000);
+        
+        // Stop creating elements when loading is done
+        setTimeout(() => {
+            clearInterval(elementInterval);
+        }, 5000);
     </script>
   </body>
 </html>
