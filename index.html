@@ -606,13 +606,13 @@
               <span class="font-medium flex gap-1">
                 Đếm ngược:
                 <div
-                  id="countdown"
+                  id="countdown2"
                   class="flex justify-center gap-1 !text-black"
                 >
-                  <div id="days" class="text-xl">00</div> :
-                  <div id="hours" class="text-xl">00</div> :
-                  <div id="minutes" class="text-xl">00</div> :
-                  <div id="seconds" class="text-xl">00</div>
+                  <div id="days2" class="text-xl">00</div> :
+                  <div id="hours2" class="text-xl">00</div> :
+                  <div id="minutes2" class="text-xl">00</div> :
+                  <div id="seconds2" class="text-xl">00</div>
                 </div>
               </span>
             </div>
@@ -1192,6 +1192,7 @@
 
       // Wedding date countdown
       const weddingDate = new Date("2025-06-29T00:00:00").getTime();
+      const weddingDate2 = new Date("2025-06-30T00:00:00").getTime();
 
       function updateCountdown() {
         const now = new Date().getTime();
@@ -1224,10 +1225,44 @@
             '<div class="text-2xl gradient-text">The Big Day is Here! 🎉</div>';
         }
       }
+      function updateCountdown2() {
+        const now = new Date().getTime();
+        const timeLeft = weddingDate2 - now;
+
+        if (timeLeft > 0) {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("days2").textContent = days
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("hours2").textContent = hours
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("minutes2").textContent = minutes
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("seconds2").textContent = seconds
+            .toString()
+            .padStart(2, "0");
+        } else {
+          document.getElementById("countdown2").innerHTML =
+            '<div class="text-2xl gradient-text">The Big Day is Here! 🎉</div>';
+        }
+      }
 
       // Update countdown every second
       setInterval(updateCountdown, 1000);
+      setInterval(updateCountdown2, 1000);
       updateCountdown();
+      updateCountdown2();
+
 
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById("mobile-menu-btn");
