@@ -27,7 +27,7 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
@@ -127,14 +127,27 @@
       }
     </style>
     <style>
-        .stagger-1 { animation-delay: 0.2s; }
-        .stagger-2 { animation-delay: 0.4s; }
-        .stagger-3 { animation-delay: 0.6s; }
-        .stagger-4 { animation-delay: 0.8s; }
-        
-        .divider-line {
-            background: linear-gradient(to bottom, transparent, #6b7280, transparent);
-        }
+      .stagger-1 {
+        animation-delay: 0.2s;
+      }
+      .stagger-2 {
+        animation-delay: 0.4s;
+      }
+      .stagger-3 {
+        animation-delay: 0.6s;
+      }
+      .stagger-4 {
+        animation-delay: 0.8s;
+      }
+
+      .divider-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #6b7280,
+          transparent
+        );
+      }
     </style>
   </head>
   <body class="font-sans bg-white text-gray-800 overflow-x-hidden">
@@ -170,7 +183,7 @@
             <a
               href="#details"
               class="text-gray-600 hover:text-sage-600 transition-colors font-medium"
-              >Sự kiện cưới</a
+              >Thư mời</a
             >
             <a
               href="#story"
@@ -230,11 +243,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
+    <div
       id="home"
       class="min-h-screen flex items-center justify-center relative"
     >
-      <!-- Background Image -->
       <div class="fixed inset-0 z-0">
         <img
           src="./wwwroot/banner/TAY_0751.JPG"
@@ -244,7 +256,6 @@
         <div class="absolute inset-0 bg-[#5b575799]"></div>
       </div>
 
-      <!-- Content -->
       <div
         class="relative z-10 text-center max-w-4xl mx-auto px-4 desktop:mt-[60px]"
       >
@@ -269,150 +280,77 @@
           </h1>
         </div>
 
-        <!-- <div class="fade-in fade-in-delay-1">
-          <p
-            class="text-xl md:text-2xl text-gray-600 mb-8 font-light tracking-wide !text-white"
+        <div class="max-w-2xl w-full fade-in fade-in-delay-3">
+          <!-- Main Date Card -->
+          <div
+            class="rounded-2xl p-4 md:p-8 text-center animate-scale-in !text-white"
           >
-            29, Tháng 6, 2025
-          </p>
-        </div> -->
-
-    <div class="max-w-2xl w-full fade-in fade-in-delay-3">
-        <!-- Main Date Card -->
-        <div class="rounded-2xl p-4 md:p-8 text-center animate-scale-in !text-white">
             <!-- Time and Day -->
             <div class="mb-2 animate-slide-up stagger-1">
-                <h1 class="text-lg md:text-xl font-sans tracking-wide">
-                    Vào Lúc <span class="font-semibold">09h00</span> 
-                    <span class="mx-3">|</span> 
-                    <span class="font-semibold">CHỦ NHẬT</span>
-                </h1>
+              <h1 class="text-lg md:text-xl font-sans tracking-wide">
+                <span class="hidden md:block">Vào Lúc</span>
+                <span class="font-semibold">09h00</span>
+                <span class="mx-3">|</span>
+                <span class="font-semibold">CHỦ NHẬT</span>
+              </h1>
             </div>
 
             <!-- Main Date Display -->
-            <div class="flex items-center justify-center mb-2 animate-slide-up stagger-2">
-                <!-- Month -->
-                <div class="text-center">
-                    <p class="text-lg md:text-xl font-sans mb-2">Tháng 06</p>
-                </div>
+            <div
+              class="flex items-center justify-center mb-2 animate-slide-up stagger-2"
+            >
+              <!-- Month -->
+              <div class="text-center">
+                <p class="text-lg md:text-xl font-sans mb-2">
+                  <span class="hidden md:block">Tháng</span> 06
+                </p>
+              </div>
 
-                <!-- Divider -->
-                <div class="mx-8 md:mx-12">
-                    <div class="w-px h-16 divider-line"></div>
-                </div>
+              <!-- Divider -->
+              <div class="mx-8 md:mx-12">
+                <div class="w-px h-16 divider-line"></div>
+              </div>
 
-                <!-- Day -->
-                <div class="text-center">
-                    <p class="text-6xl md:text-7xl font-serif font-bold leading-none animate-float">29</p>
-                </div>
+              <!-- Day -->
+              <div class="text-center">
+                <p
+                  class="text-6xl md:text-7xl font-serif font-bold leading-none animate-float"
+                >
+                  29
+                </p>
+              </div>
 
-                <!-- Divider -->
-                <div class="mx-8 md:mx-12">
-                    <div class="w-px h-16 divider-line"></div>
-                </div>
+              <!-- Divider -->
+              <div class="mx-8 md:mx-12">
+                <div class="w-px h-16 divider-line"></div>
+              </div>
 
-                <!-- Year -->
-                <div class="text-center">
-                    <p class="text-lg md:text-xl font-sans mb-2">Năm 2025</p>
-                </div>
+              <!-- Year -->
+              <div class="text-center">
+                <p class="text-lg md:text-xl font-sans mb-2">
+                  <span class="hidden md:block">Năm</span> 2025
+                </p>
+              </div>
             </div>
-
-            <!-- Lunar Calendar -->
             <div class="animate-slide-up stagger-3">
-                <p class="text-sm md:text-base font-sans italic">
-                    (Tức Ngày 05 Tháng 06 Năm Ất Tỵ)
-                </p>
-            </div>
-
-            <!-- Decorative Elements -->
-            <!-- <div class="mt-8 flex justify-center items-center animate-slide-up stagger-4">
-                <div class="flex items-center space-x-4">
-                    <div class="w-8 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent"></div>
-                    <div class="w-2 h-2 bg-rose-400 rounded-full animate-float"></div>
-                    <div class="w-8 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent"></div>
-                </div>
-            </div> -->
-        </div>
-        <!-- <div class="fade-in fade-in-delay-2">
-                <p class="text-lg text-gray-500 mb-12 font-light">
-                    Tuscany Hills Vineyard • California
-                </p>
-            </div> -->
-
-        <!-- Countdown -->
-        <!-- <div class="fade-in fade-in-delay-3">
-          <div
-            id="countdown"
-            class="flex justify-center space-x-6 md:space-x-8 mb-12 !text-black"
-          >
-            <div class="text-center desktop:w-[104px]">
-              <div
-                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
-              >
-                <div id="days" class="text-2xl md:text-3xl font-medium">00</div>
-                <div
-                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
-                >
-                  Days
-                </div>
-              </div>
-            </div>
-            <div class="text-center desktop:w-[104px]">
-              <div
-                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
-              >
-                <div id="hours" class="text-2xl md:text-3xl font-medium">
-                  00
-                </div>
-                <div
-                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
-                >
-                  Hours
-                </div>
-              </div>
-            </div>
-            <div class="text-center desktop:w-[104px]">
-              <div
-                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
-              >
-                <div id="minutes" class="text-2xl md:text-3xl font-medium">
-                  00
-                </div>
-                <div
-                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
-                >
-                  Minutes
-                </div>
-              </div>
-            </div>
-            <div class="text-center desktop:w-[104px]">
-              <div
-                class="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-6 minimal-shadow"
-              >
-                <div id="seconds" class="text-2xl md:text-3xl font-medium">
-                  00
-                </div>
-                <div
-                  class="text-sm text-gray-600 uppercase tracking-widest hidden md:block"
-                >
-                  Seconds
-                </div>
-              </div>
+              <p class="text-sm md:text-base font-sans italic">
+                (Tức Ngày 05 Tháng 06 Năm Ất Tỵ)
+              </p>
             </div>
           </div>
-
-        </div> -->
+        </div>
       </div>
-
-      <!-- Scroll Indicator -->
       <a
         href="#details"
-        class="absolute -bottom-2 md:bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce"
+        class="absolute -bottom-2 md:bottom-0 -ml-[12px] left-1/2 transform -translate-x-1/2 animate-bounce"
       >
         <i data-lucide="chevron-down" class="w-6 h-6 text-[#ffe5ba]"></i>
       </a>
-    </section>
-    <div class="container mx-auto px-4 py-12 max-w-6xl relative z-10" id="details">
+    </div>
+    <div
+      class="container mx-auto px-4 py-12 max-w-6xl relative z-10"
+      id="details"
+    >
       <!-- Header Section -->
       <div class="text-center mb-12">
         <!-- Decorative Line -->
@@ -433,11 +371,17 @@
 
         <!-- Subtitle -->
         <p
-          class="font-sans text-sm md:text-base tracking-widest text-gray-600 uppercase "
+          class="font-sans text-sm md:text-base tracking-widest text-gray-600 uppercase flex flex-col"
         >
-          <span class="text-white">Tham dự lễ cưới của</span> <br />
-          
-          <span class="!text-[#ffe5ba] font-light text-lg md:flex md:gap-1 md:justify-center">Phan Ngọc Tuấn <span class="hidden md:block">&</span> <br class="md:hidden" /> Phạm Lê Ngọc Loan</span>
+          <span class="text-white !font-script">Tham dự lễ cưới của</span>
+          <br />
+
+          <span
+            class="!text-[#ffe5ba] text-xl md:flex md:gap-1 md:justify-center !font-semibold"
+            >Phan Ngọc Tuấn <span class="hidden md:block">&</span>
+            <br class="md:hidden" />
+            Phạm Lê Ngọc Loan</span
+          >
         </p>
       </div>
 
@@ -446,6 +390,8 @@
         <!-- Photo 1 -->
         <div class="group cursor-pointer scale-95">
           <div
+            data-aos="fade-left"
+            data-aos-delay="1000"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -459,6 +405,7 @@
         <!-- Photo 2 -->
         <div class="group cursor-pointer scale-110">
           <div
+            data-aos="zoom-in"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -472,6 +419,8 @@
         <!-- Photo 3 -->
         <div class="group cursor-pointer scale-95">
           <div
+            data-aos="fade-right"
+            data-aos-delay="1000"
             class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
@@ -484,11 +433,11 @@
       </div>
 
       <!-- Wedding Details Section -->
-      <div class="mt-16 text-center">
-        <div
-          class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto"
-        >
-          <h2 class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]">
+      <div class="mt-16 text-center" data-aos="fade-up">
+        <div class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto">
+          <h2
+            class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]"
+          >
             Vu quy
           </h2>
 
@@ -518,16 +467,17 @@
               <span class="font-medium !text-sm md:!text-base"
                 ><a
                   href="https://maps.app.goo.gl/HkMWSLvD4Xrx9Mjh8"
-                  class="hover:text-[blue] hover:transform "
+                  class="hover:text-[blue] hover:transform"
                   target="_blank"
                 >
                   Tại: Trung Phú 6, Vĩnh Phú, Thoại Sơn, An Giang
                 </a>
-                </span
-              >
+              </span>
             </div>
 
-            <div class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2">
+            <div
+              class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2"
+            >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -541,23 +491,24 @@
                   id="countdown"
                   class="flex justify-center gap-1 !text-black"
                 >
-                  <div id="days" class="text-xl">00</div> :
-                  <div id="hours" class="text-xl">00</div> :
-                  <div id="minutes" class="text-xl">00</div> :
+                  <div id="days" class="text-xl">00</div>
+                  :
+                  <div id="hours" class="text-xl">00</div>
+                  :
+                  <div id="minutes" class="text-xl">00</div>
+                  :
                   <div id="seconds" class="text-xl">00</div>
                 </div>
               </span>
             </div>
           </div>
-
-         
         </div>
       </div>
-<div class="mt-16 text-center">
-        <div
-          class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto"
-        >
-          <h2 class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]">
+      <div class="mt-16 text-center" data-aos="fade-up">
+        <div class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto">
+          <h2
+            class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]"
+          >
             Tân Hôn
           </h2>
 
@@ -595,7 +546,9 @@
               >
             </div>
 
-            <div class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2">
+            <div
+              class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2"
+            >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -609,9 +562,12 @@
                   id="countdown2"
                   class="flex justify-center gap-1 !text-black"
                 >
-                  <div id="days2" class="text-xl">00</div> :
-                  <div id="hours2" class="text-xl">00</div> :
-                  <div id="minutes2" class="text-xl">00</div> :
+                  <div id="days2" class="text-xl">00</div>
+                  :
+                  <div id="hours2" class="text-xl">00</div>
+                  :
+                  <div id="minutes2" class="text-xl">00</div>
+                  :
                   <div id="seconds2" class="text-xl">00</div>
                 </div>
               </span>
@@ -629,11 +585,7 @@
           <div class="h-px bg-gray-300 w-24"></div>
         </div>
       </div>
-      
     </div>
-    <!-- Wedding Details Section -->
-    <!--  -->
-    <!-- Our Story Section -->
     <section id="story" class="py-20 z-10 relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16">
@@ -1263,7 +1215,6 @@
       updateCountdown();
       updateCountdown2();
 
-
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -1320,6 +1271,11 @@
           behavior: "smooth",
         });
       });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
