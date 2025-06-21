@@ -8,9 +8,10 @@
       name="description"
       content="Hãy cùng chúng mình chung vui ngày cưới vào 29 tháng 6, 2025"
     />
-    <link rel="shortcut icon" href="./wwwroot/journey/favicon.ico">
+    <link rel="shortcut icon" href="./wwwroot/journey/favicon.ico" />
     <link rel="apple-touch-icon" href="./wwwroot/journey/favicon.ico" />
     <meta property="og:image" content="./wwwroot/banner/TAY_0751.JPG" />
+
     <meta property="og:title" content="Ngọc Loan & Ngọc Tuấn - Wedding" />
 
     <!-- Tailwind CSS -->
@@ -124,6 +125,16 @@
       .md\:text-8xl {
         line-height: 1.15 !important;
       }
+    </style>
+    <style>
+        .stagger-1 { animation-delay: 0.2s; }
+        .stagger-2 { animation-delay: 0.4s; }
+        .stagger-3 { animation-delay: 0.6s; }
+        .stagger-4 { animation-delay: 0.8s; }
+        
+        .divider-line {
+            background: linear-gradient(to bottom, transparent, #6b7280, transparent);
+        }
     </style>
   </head>
   <body class="font-sans bg-white text-gray-800 overflow-x-hidden">
@@ -258,14 +269,70 @@
           </h1>
         </div>
 
-        <div class="fade-in fade-in-delay-1">
+        <!-- <div class="fade-in fade-in-delay-1">
           <p
             class="text-xl md:text-2xl text-gray-600 mb-8 font-light tracking-wide !text-white"
           >
             29, Tháng 6, 2025
           </p>
-        </div>
+        </div> -->
 
+    <div class="max-w-2xl w-full fade-in fade-in-delay-3">
+        <!-- Main Date Card -->
+        <div class="rounded-2xl p-4 md:p-8 text-center animate-scale-in !text-white">
+            <!-- Time and Day -->
+            <div class="mb-2 animate-slide-up stagger-1">
+                <h1 class="text-lg md:text-xl font-sans tracking-wide">
+                    Vào Lúc <span class="font-semibold">09h00</span> 
+                    <span class="mx-3">|</span> 
+                    <span class="font-semibold">CHỦ NHẬT</span>
+                </h1>
+            </div>
+
+            <!-- Main Date Display -->
+            <div class="flex items-center justify-center mb-2 animate-slide-up stagger-2">
+                <!-- Month -->
+                <div class="text-center">
+                    <p class="text-lg md:text-xl font-sans mb-2">Tháng 06</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="mx-8 md:mx-12">
+                    <div class="w-px h-16 divider-line"></div>
+                </div>
+
+                <!-- Day -->
+                <div class="text-center">
+                    <p class="text-6xl md:text-7xl font-serif font-bold leading-none animate-float">29</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="mx-8 md:mx-12">
+                    <div class="w-px h-16 divider-line"></div>
+                </div>
+
+                <!-- Year -->
+                <div class="text-center">
+                    <p class="text-lg md:text-xl font-sans mb-2">2025</p>
+                </div>
+            </div>
+
+            <!-- Lunar Calendar -->
+            <div class="animate-slide-up stagger-3">
+                <p class="text-sm md:text-base font-sans italic">
+                    (Tức Ngày 05 Tháng 06 Năm Ất Tỵ)
+                </p>
+            </div>
+
+            <!-- Decorative Elements -->
+            <!-- <div class="mt-8 flex justify-center items-center animate-slide-up stagger-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-8 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent"></div>
+                    <div class="w-2 h-2 bg-rose-400 rounded-full animate-float"></div>
+                    <div class="w-8 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent"></div>
+                </div>
+            </div> -->
+        </div>
         <!-- <div class="fade-in fade-in-delay-2">
                 <p class="text-lg text-gray-500 mb-12 font-light">
                     Tuscany Hills Vineyard • California
@@ -273,7 +340,7 @@
             </div> -->
 
         <!-- Countdown -->
-        <div class="fade-in fade-in-delay-3">
+        <!-- <div class="fade-in fade-in-delay-3">
           <div
             id="countdown"
             class="flex justify-center space-x-6 md:space-x-8 mb-12 !text-black"
@@ -334,107 +401,238 @@
             </div>
           </div>
 
-          <!-- <button onclick="scrollToSection('rsvp')" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    RSVP Now
-                </button> -->
-        </div>
+        </div> -->
       </div>
 
       <!-- Scroll Indicator -->
       <a
         href="#details"
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        class="absolute -bottom-2 md:bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce"
       >
         <i data-lucide="chevron-down" class="w-6 h-6 text-[#ffe5ba]"></i>
       </a>
     </section>
-    
-    <!-- Wedding Details Section -->
-    <section id="details" class="py-20 z-10 relative">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-16">
-          <h2
-            class="text-4xl md:text-5xl gradient-text mb-6 line-divider font-bold"
-          >
-            Sự kiện cưới
-          </h2>
+    <div class="container mx-auto px-4 py-12 max-w-6xl relative z-10" id="details">
+      <!-- Header Section -->
+      <div class="text-center mb-12">
+        <!-- Decorative Line -->
+        <div class="flex items-center justify-center mb-6">
+          <div class="h-px bg-gray-300 w-24"></div>
+          <div class="mx-4">
+            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+          </div>
+          <div class="h-px bg-gray-300 w-24"></div>
         </div>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Ceremony -->
-          <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
-            <span class="text-[red] text-6xl">&#10084;</span>
-            <h3 class="text-4xl mb-4">Vu Quy</h3>
-            <div class="space-y-2 text-gray-600">
-              <p class="flex items-center justify-center">
-                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                9:00 AM - 11:00 AM
-              </p>
-              <p class="flex items-start justify-center">
-                <i data-lucide="calendar" class="w-4 h-4 mr-2 mt-[4px]"></i>
-                29, Tháng 6, 2025 - 05, Tháng 6, 2025 ÂL
-              </p>
 
-              <p class="flex items-start justify-center">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-[4px]"></i>
-                <a
+        <!-- Main Title -->
+        <h1
+          class="font-script text-6xl md:text-7xl text-gray-800 mb-4 !text-[#ffe5ba]"
+        >
+          Thư mời
+        </h1>
+
+        <!-- Subtitle -->
+        <p
+          class="font-sans text-sm md:text-base tracking-widest text-gray-600 uppercase "
+        >
+          <span class="text-white">Tham dự lễ cưới của</span> <br />
+          
+          <span class="!text-[#ffe5ba] font-light text-lg md:flex md:gap-1 md:justify-center">Phan Ngọc Tuấn <span class="hidden md:block">&</span> <br class="md:hidden" /> Phạm Lê Ngọc Loan</span>
+        </p>
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="grid grid-cols-3 gap-3 md:gap-8">
+        <!-- Photo 1 -->
+        <div class="group cursor-pointer scale-95">
+          <div
+            class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <img
+              src="./wwwroot/journey/HNW_2906.JPG"
+              alt="Wedding Photo 1"
+              class="w-full md:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="group cursor-pointer scale-110">
+          <div
+            class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <img
+              src="./wwwroot/journey/HNW_2906.JPG"
+              alt="Wedding Photo 2"
+              class="w-full md:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="group cursor-pointer scale-95">
+          <div
+            class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <img
+              src="./wwwroot/journey/HNW_2906.JPG"
+              alt="Wedding Photo 3"
+              class="w-full md:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Wedding Details Section -->
+      <div class="mt-16 text-center">
+        <div
+          class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto"
+        >
+          <h2 class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]">
+            Vu quy
+          </h2>
+
+          <div class="space-y-4 text-gray-600">
+            <div class="flex items-start justify-center space-x-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium !text-sm md:!text-base">
+                29, Tháng 6, 2025 - 05, Tháng 6, 2025 ÂL <br />
+                9:00 AM - 11:00 AM</span
+              >
+            </div>
+
+            <div class="flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium !text-sm md:!text-base"
+                ><a
                   href="https://maps.app.goo.gl/HkMWSLvD4Xrx9Mjh8"
-                  class="text-[blue]"
+                  class="hover:text-[blue] hover:transform "
                   target="_blank"
                 >
                   Tại: Trung Phú 6, Vĩnh Phú, Thoại Sơn, An Giang
                 </a>
-              </p>
-              <!-- <p class="text-sm text-gray-500 mt-4">
-                            1234 Vineyard Lane<br>
-                            Napa Valley, CA 94558
-                        </p> -->
+                </span
+              >
+            </div>
+
+            <div class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium flex gap-1">
+                Đếm ngược:
+                <div
+                  id="countdown"
+                  class="flex justify-center gap-1 !text-black"
+                >
+                  <div id="days" class="text-xl">00</div> :
+                  <div id="hours" class="text-xl">00</div> :
+                  <div id="minutes" class="text-xl">00</div> :
+                  <div id="seconds" class="text-xl">00</div>
+                </div>
+              </span>
             </div>
           </div>
 
-          <!-- Reception -->
-          <div class="bg-gray-50 rounded-lg p-8 text-center hover-lift">
-            <span class="text-[red] text-6xl">&#10084;</span>
-            <h3 class="text-4xl mb-4">Tân Hôn</h3>
-            <div class="space-y-2 text-gray-600">
-              <p class="flex items-center justify-center">
-                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                10:00 AM - 12:00 AM
-              </p>
-              <p class="flex items-start justify-center">
-                <i data-lucide="calendar" class="w-4 h-4 mr-2 mt-[4px]"></i>
-                30, Tháng 6, 2025 - 06, Tháng 6, 2025 ÂL
-              </p>
+         
+        </div>
+      </div>
+<div class="mt-16 text-center">
+        <div
+          class="bg-white rounded-lg shadow-md p-4 md:p-8 max-w-lg mx-auto"
+        >
+          <h2 class="font-script text-3xl md:text-5xl text-gray-800 mb-6 font-semibold !text-[red]">
+            Tân Hôn
+          </h2>
 
-              <p class="flex items-start justify-center">
-                <i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-[4px]"></i>
-                <a
+          <div class="space-y-4 text-gray-600">
+            <div class="flex items-start justify-center space-x-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium !text-sm md:!text-base">
+                30, Tháng 6, 2025 - 06, Tháng 6, 2025 ÂL <br />
+                10:00 AM - 12:00 AM</span
+              >
+            </div>
+
+            <div class="flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium !text-sm md:!text-base"
+                ><a
                   href="https://maps.app.goo.gl/3gFJVJZo9wqizK8TA"
-                  class="text-[blue]"
+                  class="hover:text-[blue] hover:mb-1"
                   target="_blank"
                 >
                   Tại: TT. An Châu, Châu Thành, An Giang
-                </a>
-              </p>
-              <!-- <p class="text-sm text-gray-500 mt-4">
-                            Dinner, Dancing & Celebration<br>
-                            Cocktail Hour: 6:00 PM
-                        </p> -->
+                </a></span
+              >
+            </div>
+
+            <div class="flex items-center justify-center space-x-2 border-t border-gray-200 pt-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="font-medium flex gap-1">
+                Đếm ngược:
+                <div
+                  id="countdown"
+                  class="flex justify-center gap-1 !text-black"
+                >
+                  <div id="days" class="text-xl">00</div> :
+                  <div id="hours" class="text-xl">00</div> :
+                  <div id="minutes" class="text-xl">00</div> :
+                  <div id="seconds" class="text-xl">00</div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
-
-        <!-- Additional Info -->
-        <!-- <div class="mt-12 max-w-2xl mx-auto text-center bg-sage-50 rounded-lg p-8">
-                <h3 class="text-xl gradient-text mb-4">Dress Code</h3>
-                <p class="text-gray-600 mb-4">
-                    Cocktail attire requested. We'll be celebrating in a garden setting, so comfortable shoes are recommended.
-                </p>
-                <p class="text-sm text-gray-500">
-                    The ceremony will be outdoors with an indoor reception to follow.
-                </p>
-            </div> -->
       </div>
-    </section>
+      <!-- Footer -->
+      <div class="mt-16 text-center">
+        <div class="flex items-center justify-center mb-4">
+          <div class="h-px bg-gray-300 w-24"></div>
+          <div class="mx-4">
+            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+          </div>
+          <div class="h-px bg-gray-300 w-24"></div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Wedding Details Section -->
+    <!--  -->
     <!-- Our Story Section -->
     <section id="story" class="py-20 z-10 relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -1087,40 +1285,6 @@
           behavior: "smooth",
         });
       });
-
-      // RSVP Form submission
-      //   document
-      //     .getElementById("rsvp-form")
-      //     .addEventListener("submit", function (e) {
-      //       e.preventDefault();
-
-      //       // Show success message
-      //       alert("Thank you for your RSVP! We'll be in touch soon.");
-
-      //       // Here you would typically send the form data to your server
-      //       // For demo purposes, we'll just reset the form
-      //       this.reset();
-      //     });
-
-      // Intersection Observer for fade-in animations
-      //   const observerOptions = {
-      //     threshold: 0.1,
-      //     rootMargin: "0px 0px -50px 0px",
-      //   };
-
-      //   const observer = new IntersectionObserver((entries) => {
-      //     entries.forEach((entry) => {
-      //       if (entry.isIntersecting) {
-      //         entry.target.style.opacity = "1";
-      //         entry.target.style.transform = "translateY(0)";
-      //       }
-      //     });
-      //   }, observerOptions);
-
-      //   // Observe all sections for scroll animations
-      //   document.querySelectorAll("section").forEach((section) => {
-      //     observer.observe(section);
-      //   });
     </script>
   </body>
 </html>
