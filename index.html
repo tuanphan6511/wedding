@@ -149,6 +149,110 @@
         );
       }
     </style>
+     <style>
+        :root {
+            --primary-color: #ffe5ba;
+            --secondary-color: #f4d19b;
+            --accent-color: #e6c77e;
+            --text-primary: #ffe5ba;
+            --text-secondary: #f4d19b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Ring Simple Float Animation */
+        @keyframes simpleFloat {
+            0%, 100% { 
+                transform: translateY(0px) scale(1); 
+                opacity: 0.9;
+            }
+            50% { 
+                transform: translateY(-8px) scale(1.05); 
+                opacity: 1;
+            }
+        }
+
+        /* Simple Sparkle Animation */
+        @keyframes simpleSparkle {
+            0%, 100% { 
+                opacity: 0.3; 
+            }
+            50% { 
+                opacity: 0.8; 
+            }
+        }
+
+        .simple-float {
+            animation: simpleFloat 3s ease-in-out infinite;
+        }
+
+        .simple-sparkle {
+            animation: simpleSparkle 2s ease-in-out infinite;
+        }
+        
+        
+        /* Floating Elements */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes smoothFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes elegantProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        
+        .floating-particle {
+            position: absolute;
+            animation: floatUp 8s linear infinite;
+            font-size: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .smooth-fade-in {
+            animation: smoothFadeIn 1.2s ease-out;
+        }
+        
+        .elegant-progress {
+            animation: elegantProgress 4s ease-out infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Custom Heart SVG Styles */
+        .heart-svg {
+            filter: drop-shadow(0 0 20px rgba(255, 229, 186, 0.5));
+        }
+    </style>
   </head>
   <body class="font-sans bg-white text-gray-800 overflow-x-hidden">
     <!-- Navigation -->
@@ -1058,36 +1162,42 @@
       <source src="./wwwroot/audio/911-lyrics--vietsub.mp3" type="audio/mpeg" />
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
-    <div id="loadingScreen" class="fixed inset-0 z-[9999] flex items-center justify-center custom-gradient !bg-[#ffe5ba]">
-        <!-- Delicate Particles Background -->
+    <div id="loadingScreen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <!-- Floating Particles Background -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="delicate-particle" style="left: 15%; animation-delay: 0s;">♡</div>
-            <div class="delicate-particle" style="left: 25%; animation-delay: 2s;">✧</div>
-            <div class="delicate-particle" style="left: 35%; animation-delay: 4s;">♡</div>
-            <div class="delicate-particle" style="left: 45%; animation-delay: 1s;">✧</div>
-            <div class="delicate-particle" style="left: 55%; animation-delay: 3s;">♡</div>
-            <div class="delicate-particle" style="left: 65%; animation-delay: 5s;">✧</div>
-            <div class="delicate-particle" style="left: 75%; animation-delay: 1.5s;">♡</div>
-            <div class="delicate-particle" style="left: 85%; animation-delay: 3.5s;">✧</div>
+            <div class="floating-particle" style="left: 10%; animation-delay: 0s;">💍</div>
+            <div class="floating-particle" style="left: 20%; animation-delay: 2s;">✧</div>
+            <div class="floating-particle" style="left: 30%; animation-delay: 4s;">💍</div>
+            <div class="floating-particle" style="left: 40%; animation-delay: 1s;">✧</div>
+            <div class="floating-particle" style="left: 50%; animation-delay: 3s;">💍</div>
+            <div class="floating-particle" style="left: 60%; animation-delay: 5s;">✧</div>
+            <div class="floating-particle" style="left: 70%; animation-delay: 1.5s;">💍</div>
+            <div class="floating-particle" style="left: 80%; animation-delay: 3.5s;">✧</div>
+            <div class="floating-particle" style="left: 90%; animation-delay: 2.5s;">💍</div>
         </div>
         
         <!-- Main Loading Content -->
         <div class="text-center smooth-fade-in max-w-md mx-auto px-6">
-            <!-- Elegant Heart Container -->
-            <div class="mb-12 elegant-float">
-                <div class="relative inline-block">
-                    <!-- Main Heart -->
-                    <div class="gentle-heartbeat text-6xl mb-4" style="color: var(--accent-color);">♡</div>
+            <!-- Ring Loading Animation -->
+            <div class="mb-12 relative">
+                
+                
+                <!-- Main Ring Container -->
+                <div class="relative z-10 simple-float">
+                    <!-- Simple Wedding Ring SVG -->
+                    <svg class="w-20 h-20 mx-auto" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 10px rgba(255, 229, 186, 0.3));">
+                        <!-- Ring Band -->
+                        <circle cx="50" cy="50" r="20" fill="none" stroke="#ffe5ba" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#f4d19b" stroke-width="2"/>
+                        
+                        <!-- Simple Diamond -->
+                        <polygon points="50,25 47,35 53,35" fill="#ffe5ba"/>
+                    </svg>
                     
-                    <!-- Subtle Decorative Elements -->
-                    <div class="absolute -top-2 -left-8">
-                        <div class="subtle-glow text-lg" style="color: var(--secondary-color); animation-delay: 0s;">✧</div>
-                    </div>
-                    <div class="absolute -top-2 -right-8">
-                        <div class="subtle-glow text-lg" style="color: var(--secondary-color); animation-delay: 1s;">✧</div>
-                    </div>
-                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div class="subtle-glow text-sm" style="color: var(--secondary-color); animation-delay: 2s;">✧</div>
+                    <!-- Simple Sparkle Effects -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="simple-sparkle text-sm" style="color: var(--primary-color); position: absolute; top: 15%; right: 25%;">✦</div>
+                        <div class="simple-sparkle text-sm" style="color: var(--accent-color); position: absolute; bottom: 20%; left: 20%; animation-delay: 1s;">✧</div>
                     </div>
                 </div>
             </div>
@@ -1097,30 +1207,25 @@
                 <h1 class="font-serif text-4xl md:text-5xl font-light text-gradient mb-3 tracking-wide">
                     Wedding
                 </h1>
-                <div class="w-16 h-px mx-auto mb-4" style="background-color: var(--accent-color);"></div>
+                <div class="w-16 h-px mx-auto mb-4" style="background: linear-gradient(90deg, transparent, var(--accent-color), transparent);"></div>
                 <p class="text-lg font-light tracking-wider" style="color: var(--text-primary);">
                     Đang chuẩn bị cho bạn
                 </p>
             </div>
             
-            <!-- Elegant Loading Indicator -->
+            <!-- Progress Bar -->
             <div class="mb-8">
-                <div class="flex justify-center mb-4">
-                    <div class="loading-ring"></div>
-                </div>
-                
-                <!-- Progress Bar -->
                 <div class="w-48 mx-auto mb-4">
-                    <div class="h-0.5 rounded-full overflow-hidden" style="background-color: rgba(255, 229, 186, 0.3);">
+                    <div class="h-1 rounded-full overflow-hidden bg-gray-800">
                         <div class="elegant-progress h-full rounded-full" style="background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
                     </div>
                 </div>
                 
                 <!-- Loading Dots -->
-                <div class="flex justify-center space-x-1">
-                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0s;"></div>
-                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.3s;"></div>
-                    <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.6s;"></div>
+                <div class="flex justify-center space-x-2">
+                    <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0s;"></div>
+                    <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.3s;"></div>
+                    <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent-color); animation-delay: 0.6s;"></div>
                 </div>
             </div>
             
