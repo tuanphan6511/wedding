@@ -1376,62 +1376,6 @@
     <script>
       AOS.init();
     </script>
-    <script>
-        // Simulate loading time with elegant timing
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loadingScreen = document.getElementById('loadingScreen');
-                const mainContent = document.getElementById('mainContent');
-                
-                // Elegant fade out
-                loadingScreen.style.transition = 'opacity 1.5s ease-out, transform 1.5s ease-out';
-                loadingScreen.style.opacity = '0';
-                loadingScreen.style.transform = 'scale(1.05)';
-                
-                setTimeout(function() {
-                    loadingScreen.style.display = 'none';
-                    mainContent.classList.remove('hidden');
-                    mainContent.style.opacity = '0';
-                    mainContent.style.transform = 'translateY(20px)';
-                    mainContent.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
-                    
-                    setTimeout(function() {
-                        mainContent.style.opacity = '1';
-                        mainContent.style.transform = 'translateY(0)';
-                    }, 100);
-                }, 1500);
-            }, 3000); // Show loading for 3 seconds for elegant experience
-        });
-        
-        // Create subtle floating elements
-        function createDelicateElement() {
-            const container = document.querySelector('#loadingScreen .absolute.inset-0');
-            const symbols = ['♡', '✧', '◦'];
-            const element = document.createElement('div');
-            
-            element.className = 'delicate-particle';
-            element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-            element.style.left = Math.random() * 100 + '%';
-            element.style.fontSize = (Math.random() * 0.5 + 1) + 'rem';
-            element.style.animationDelay = Math.random() * 3 + 's';
-            element.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            
-            container.appendChild(element);
-            
-            setTimeout(() => {
-                if (element.parentNode) {
-                    element.parentNode.removeChild(element);
-                }
-            }, 10000);
-        }
-        
-        // Create elements periodically but subtly
-        const elementInterval = setInterval(createDelicateElement, 2000);
-        
-        // Stop creating elements when loading is done
-        setTimeout(() => {
-            clearInterval(elementInterval);
-        }, 5000);
-    </script>
+   
   </body>
 </html>
